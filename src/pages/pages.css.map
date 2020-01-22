@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,KAAK;CAClB",
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,KAAK;ECYlB,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EAHkC,MAAM;EAInD,cAAc,EAJmD,MAAM;CDRvE",
     "sources": [
-        "pages.scss"
+        "pages.scss",
+        "../globals/mixins.scss"
     ],
     "names": [],
     "file": "pages.css"

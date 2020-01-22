@@ -23,6 +23,7 @@ const RestaurantData = () => {
       restaurantsList.map((entry) =>
         <li>
           <strong>{ entry.name }</strong>
+          , { entry.city }
           <br/>
           { entry.tags.join(', ')}
           <br/>
