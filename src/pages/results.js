@@ -4,7 +4,7 @@ import RestaurantData from '../data/restaurantData';
 import { NavLink } from 'react-router-dom';
 import './pages.css';
 
-const Dashboard = () => {
+const Results = () => {
   return (
     <div className="page">
       <NavLink exact to="/" activeClassName="active" >
@@ -15,4 +15,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Results;

@@ -3,7 +3,7 @@ import { Redirect, withRouter, Switch, Route, __RouterContext } from 'react-rout
 import { config, useTransition, animated } from 'react-spring';
 import Landing from './pages/landing';
 import AbsoluteContainer from './containers/absoluteContainer';
-const Dashboard = lazy(() => import('./pages/dashboard'));
+const Results = lazy(() => import('./pages/results'));
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,7 +24,7 @@ const App = () => {
             <Suspense fallback={<h1>Restaurants loading...</h1>}>
               <Switch location={item}>
                 <Route path="/" exact component={Landing} />
-                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/results" component={Results} />
               </Switch>
             </Suspense>
           </animated.div>

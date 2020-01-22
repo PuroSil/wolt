@@ -1,3 +1,5 @@
+#DESIGN LINK: https://www.figma.com/file/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=0%3A1
+
 Front:
 
 Build a web page that shows all fifty restaurants. You can freely decide which fields to utilize from restaurants objects, so no need to put all the data visible. However, please use at least three fields.
