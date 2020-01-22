@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-//const routes = require('./routes/restaurantRoutes');
+const routes = require('./routes/restaurantRoutes');
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -39,7 +39,7 @@ mongoose.connect(dbUri,
   }
 );
 
-//app.use('/api', [routes]);
+app.use('/api', [routes]);
 
 app.listen(port, () => {
   console.log(`Serves is running on port: ${port}`);

@@ -11,6 +11,9 @@ const RestaurantContainer = () => {
           { entry.name }
           <br/>
           { entry.city }
+          <br/>
+          { entry.tags.join(', ')}
+          <br/><br/>
         </li>
       )}
     </ol>
