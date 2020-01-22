@@ -1,13 +1,13 @@
 import React from 'react';
 import RestaurantContainer from '../containers/restaurantContainer';
 import RestaurantData from '../data/restaurantData';
+import './pages.css';
 
 const Dashboard = () => {
   return (
-    <>
-      {/*<RestaurantContainer />*/}
+    <div className="page">
       <RestaurantData />
-    </>
+    </div>
   );
 };
 

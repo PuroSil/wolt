@@ -1,0 +1,6 @@
+.container__absolute {
+  position: absolute;
+  width: 100%;
+  overflow: hidden !important;
+}
+/*# sourceMappingURL=containers.css.map */

@@ -1,0 +1,32 @@
+//BREAKPOINTS
+@mixin breakpoint-small() {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin breakpoint-medium() {
+	@media (max-width: 1280px) {
+		@content;
+	}
+}
+
+//ALIGNMENTS
+@mixin default-flex($justify: center, $align: center, $direction: column) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin default-grid($justify: center, $align: center, $columns: 1fr 1fr) {
+	display: grid;
+	justify-items: $justify;
+	align-content: $align;
+	grid-template-columns: $columns;
+}
+
+//ANIMATIONS
+@mixin default-transition($target: all, $time: 0.15s, $type: ease-in-out) {
+	transition: $time $target $type;
+}

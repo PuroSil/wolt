@@ -42,5 +42,5 @@ mongoose.connect(dbUri,
 app.use('/api', [routes]);
 
 app.listen(port, () => {
-  console.log(`Serves is running on port: ${port}`);
+  console.log(`Server is running on port: ${port}`);
 });
