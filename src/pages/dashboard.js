@@ -5,7 +5,7 @@ import RestaurantData from '../data/restaurantData';
 const Dashboard = () => {
   return (
     <>
-      <RestaurantContainer />
+      {/*<RestaurantContainer />*/}
       <RestaurantData />
     </>
   );

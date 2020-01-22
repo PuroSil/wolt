@@ -22,7 +22,9 @@ const RestaurantData = () => {
       {restaurantsList &&
       restaurantsList.map((entry) =>
         <li>
-          { entry.name }
+          <strong>{ entry.name }</strong>
+          <br/>
+          { entry.tags.join(', ')}
           <br/>
         </li>
       )}
