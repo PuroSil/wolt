@@ -5,9 +5,8 @@ import './pages.css';
 const Landing = () => {
   return (
     <div className="page">
-      Landing
       <NavLink exact to="/dashboard" activeClassName="active" >
-        <span aria-label="Navigation link">Dashboard</span>
+        <span aria-label="Navigation link">To Dashboard</span>
       </NavLink>
     </div>
   );
