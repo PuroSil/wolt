@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front:
 
-## Available Scripts
+Build a web page that shows all fifty restaurants. You can freely decide which fields to utilize from restaurants objects, so no need to put all the data visible. However, please use at least three fields.
 
-In the project directory, you can run:
+There are no restrictions on design, so restaurants can be displayed vertically, horizontally, on a grid or however you decide. Aim for clear and responsive design.
 
-### `npm start`
+In addition of rendering restaurants, create a possibility to sort restaurants alphabetically in ascending and descending order, e.g. by adding a sort-button on the top of the list.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Below is an example how the user interface could look like:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+Back:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a REST API endpoint that allows searching restaurants. API needs to accept three parameters:
 
-### `npm run build`
+    q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
+    lat: latitude coordinate (customer's location)
+    lon : longitude coordinate (customer's location)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API should return restaurant (objects) which match the given query string and are closer than 3 kilometers from coordinates.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Example query:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+/restaurants/search?q=sushi&lat=60.17045&lon=24.93147
 
-### `npm run eject`
+This search would return restaurants (in JSON format) which contain a word sushi and are closer than 3km to the point [60.17045, 24.93147].
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Please do not use any on-disk database (MySQL, PostgreSQL, ...) or ElasticSearch in this assignment. The task can be completed without them.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Bonus task: Blurhash
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Restaurant data also includes a field called blurhash. As a bonus task you can figure out what this field is and use it:
 
-## Learn More
+    In frontend task you can render the blurhash data
+    In backend task you can e.g. validate that blurhash-field is correct when loading data from restaurant.json
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+There are some ready-made libraries for manipulating blurhash values. Feel free use those or create your own one.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Bonus task is completely optional and it doesn't affect how we review assignments. It exists only for fun! grinning
+Instructions
 
-### Code Splitting
+    Write the assignment using either TypeScript / JavaScript, Python, Scala, Kotlin or Java
+    Feel free to use any 3rd party framework / library, however try to minimize external dependencies. React is popular in Wolt, so would be great if you can use that in frontend version of this task.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+Few tips
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    Everyone in Wolt loves clean code
+    Everyone in Wolt also loves good tests
+    Try to figure out what is the essential part in this task. Focus on that first.
+    Don't forget README.md with clear instructions how to get the project up and running
