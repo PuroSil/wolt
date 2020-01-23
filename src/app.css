@@ -1,0 +1,10 @@
+.app {
+  position: relative;
+}
+
+.app > div {
+  position: absolute;
+  width: 100%;
+  overflow: hidden !important;
+}
+/*# sourceMappingURL=app.css.map */

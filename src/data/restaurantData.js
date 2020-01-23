@@ -5,16 +5,25 @@ const RestaurantData = () => {
   const [restaurantsList, setRestaurantsList] = useState([]);
 
   useEffect(() => {
-    (async function () {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+    
+    const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/getAllRestaurants');
-        return (
-          setRestaurantsList(response.data)
-        );
-      } catch (err) {
-          return console.log(err);
-      }
-    }());
+        const response = await axios.get('http://localhost:8000/api/getAllRestaurants', { cancelToken: source.token });
+          setRestaurantsList(response.data);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Fetch cancelled.");
+        } else {
+          throw error;
+        }
+      };
+    };
+    fetchData();
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   return (

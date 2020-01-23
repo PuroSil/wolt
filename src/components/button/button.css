@@ -1,0 +1,27 @@
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+.button {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  color: #fafafa;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+}
+
+.button__default {
+  background-color: #009de0;
+  border: 2px solid transparent;
+}
+
+.button__default:hover {
+  background-color: #fafafa;
+  border: 2px solid #009de0;
+  color: #323232;
+}
+/*# sourceMappingURL=button.css.map */

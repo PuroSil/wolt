@@ -1,0 +1,25 @@
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.button {
+  padding: $size-one-half $size-two;
+  cursor: pointer;
+  border-radius: $size-three;
+  color: $pure-white;
+  font-family: 'Dosis', sans-serif;
+  font-size: $size-one-plus-two-tenths;
+  font-weight: 600;
+
+  @include default-transition;
+
+  &__default {
+    background-color: $theme-cyan;
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: $pure-white;
+      border: 2px solid $theme-cyan;
+      color: $broken-black;
+    }
+  }
+}
