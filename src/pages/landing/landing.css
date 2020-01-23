@@ -2,4 +2,8 @@
   font-family: 'Dosis', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
 */
+.page__landing {
+  background-image: url("../../resources/images/pink.jpg");
+  background-size: cover;
+}
 /*# sourceMappingURL=landing.css.map */

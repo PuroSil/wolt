@@ -7,25 +7,24 @@
   cursor: pointer;
   border-radius: 3rem;
   color: #fafafa;
-  font-family: 'Dosis', sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: 'Dosis', sans-serif;
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
 }
 
 .button__default {
   background-color: #009de0;
-  border: 2px solid transparent;
-  -webkit-box-shadow: 3px 3px 6px #c8c8c8;
-          box-shadow: 3px 3px 6px #c8c8c8;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .button__default:hover {
   background-color: #fafafa;
-  border: 2px solid #009de0;
   color: #323232;
-  -webkit-box-shadow: 3px 3px 3px #c8c8c8;
-          box-shadow: 3px 3px 3px #c8c8c8;
+  -webkit-box-shadow: 2px 2px 6px #c7c7c7;
+          box-shadow: 2px 2px 6px #c7c7c7;
 }
 /*# sourceMappingURL=button.css.map */

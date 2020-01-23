@@ -32,28 +32,38 @@
 
 .container__search h3 {
   font-family: 'Dosis', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.5rem;
   text-align: left;
   margin: 0 0 3rem;
 }
 
+.container__search p {
+  font-size: 1.1rem;
+  font-family: 'Dosis', sans-serif;
+}
+
 .container__search input[type=text] {
-  padding: 1rem 1rem 1rem 3.5rem;
+  padding: 0.8rem 2rem 0.8rem 3.5rem;
   border-radius: 3rem;
   border: 1px solid #c8c8c8;
   width: 20rem;
   margin-bottom: 0.5rem;
 }
 
-.container__search .input {
+.container__search .input__address {
   position: relative;
+  margin-bottom: 2rem;
 }
 
-.container__search .input img {
+.container__search .input__address p {
+  padding-bottom: 0.5rem;
+}
+
+.container__search .input__address img {
   position: absolute;
   left: 1rem;
-  top: 0.7rem;
-  height: 1.8rem;
+  top: 2.5rem;
+  height: 1.6rem;
 }
 /*# sourceMappingURL=searchContainer.css.map */

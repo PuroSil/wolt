@@ -2,4 +2,6 @@
 @import '../../globals/mixins';
 
 .page__landing {
+  background-image: url("../../resources/images/pink.jpg");
+  background-size: cover;
 }

@@ -18,28 +18,38 @@
 
   h3 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: $size-one-plus-half;
     text-align: left;
     margin: 0 0 $size-three;
   }
 
+  p {
+    font-size: 1.1rem;
+    font-family: 'Dosis', sans-serif;
+  }
+
   input[type=text] {
-    padding: $size-one $size-one $size-one $size-three-plus-half;
+    padding: 0.8rem $size-two 0.8rem $size-three-plus-half;
     border-radius: $size-three;
     border: 1px solid rgb(200, 200, 200);
     width: 20rem;
     margin-bottom: $size-one-half;
   }
 
-  .input {
+  .input__address {
     position: relative;
+    margin-bottom: 2rem;
+
+    p {
+      padding-bottom: 0.5rem;
+    }
 
     img {
       position: absolute;
       left: 1rem;
-      top: 0.7rem;
-      height: 1.8rem;
+      top: 2.5rem;
+      height: 1.6rem;
     }
   }
 }
