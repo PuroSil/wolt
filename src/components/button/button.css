@@ -17,11 +17,15 @@
 .button__default {
   background-color: #009de0;
   border: 2px solid transparent;
+  -webkit-box-shadow: 3px 3px 6px #c8c8c8;
+          box-shadow: 3px 3px 6px #c8c8c8;
 }
 
 .button__default:hover {
   background-color: #fafafa;
   border: 2px solid #009de0;
   color: #323232;
+  -webkit-box-shadow: 3px 3px 3px #c8c8c8;
+          box-shadow: 3px 3px 3px #c8c8c8;
 }
 /*# sourceMappingURL=button.css.map */

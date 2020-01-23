@@ -15,11 +15,13 @@
   &__default {
     background-color: $theme-cyan;
     border: 2px solid transparent;
+    box-shadow: 3px 3px 6px rgb(200, 200, 200);
 
     &:hover {
       background-color: $pure-white;
       border: 2px solid $theme-cyan;
       color: $broken-black;
+      box-shadow: 3px 3px 3px rgb(200, 200, 200);
     }
   }
 }

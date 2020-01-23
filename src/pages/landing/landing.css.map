@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA;;;EAGE",
+    "sources": [
+        "landing.scss",
+        "../../globals/variables.scss",
+        "../../globals/mixins.scss"
+    ],
+    "names": [],
+    "file": "landing.css"
+}

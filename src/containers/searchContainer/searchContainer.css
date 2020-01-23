@@ -1,0 +1,59 @@
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+.container__search {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container__search .button {
+  width: 20rem;
+  margin: 0.5rem 0;
+}
+
+.container__search .logo {
+  width: 21rem;
+  -webkit-transform: rotate(7deg);
+          transform: rotate(7deg);
+}
+
+.container__search h3 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 0 0 3rem;
+}
+
+.container__search input[type=text] {
+  padding: 1rem 1rem 1rem 3.5rem;
+  border-radius: 3rem;
+  border: 1px solid #c8c8c8;
+  width: 20rem;
+  margin-bottom: 0.5rem;
+}
+
+.container__search .input {
+  position: relative;
+}
+
+.container__search .input img {
+  position: absolute;
+  left: 1rem;
+  top: 0.7rem;
+  height: 1.8rem;
+}
+/*# sourceMappingURL=searchContainer.css.map */

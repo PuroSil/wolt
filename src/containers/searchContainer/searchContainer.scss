@@ -1,0 +1,45 @@
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.container__search  {
+  width: 20rem;
+
+  @include default-flex($align: flex-start);
+
+  .button {
+    width: 20rem;
+    margin: $size-one-half 0;
+  }
+
+  .logo {
+    width: 21rem;
+    transform: rotate(7deg);
+  }
+
+  h3 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: $size-one-plus-half;
+    text-align: left;
+    margin: 0 0 $size-three;
+  }
+
+  input[type=text] {
+    padding: $size-one $size-one $size-one $size-three-plus-half;
+    border-radius: $size-three;
+    border: 1px solid rgb(200, 200, 200);
+    width: 20rem;
+    margin-bottom: $size-one-half;
+  }
+
+  .input {
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 1rem;
+      top: 0.7rem;
+      height: 1.8rem;
+    }
+  }
+}
