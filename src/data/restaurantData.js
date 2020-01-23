@@ -30,7 +30,7 @@ const RestaurantData = () => {
     <ol>
       {restaurantsList &&
       restaurantsList.map((entry) =>
-        <li>
+        <li key={ entry.location }>
           <strong>{ entry.name }</strong>
           , { entry.city }
           <br/>
