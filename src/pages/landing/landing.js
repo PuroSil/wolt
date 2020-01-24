@@ -18,12 +18,12 @@ const Landing = () => {
             <ImageElement className={""} alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
             <p>Where do you want it delivered?</p>
             <input type="text" placeholder="Type your address..." id="input__address"></input>
-            <NavLink exact to="/results" activeClassName="active">
+            <NavLink exact to="/results">
               <Button aria-label="Navigation link" text={"SEARCH FOR RESTAURANTS"} />
             </NavLink>
           </span>
           <p>Show me nearby restaurants</p>
-          <NavLink onClick={geoLocation} exact to="/results" activeClassName="active" id="button__nearby">
+          <NavLink onClick={geoLocation} exact to="/results">
             <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} />
           </NavLink>
         </>

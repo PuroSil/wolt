@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import ImageElement from '../../components/image/image';
 
-const RestaurantContainer = () => {
-  const [restaurantsList, setRestaraunts] = useState([])
-
+const RestaurantContainer = ({ imgUrl }) => {
   return (
     <div>
-      Placeholder
+      <ImageElement src={imgUrl} />
     </div>
   );
 };

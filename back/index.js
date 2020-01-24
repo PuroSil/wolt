@@ -22,7 +22,6 @@ app.use(express.json());
 if(!dbUri) {
   console.log('No database address found in .env file');
 };
-
 mongoose.connect(dbUri,
   {
     useUnifiedTopology: true,
