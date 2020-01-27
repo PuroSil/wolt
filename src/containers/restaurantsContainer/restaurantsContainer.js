@@ -39,7 +39,8 @@ const RestaurantContainer = () => {
             name={entry.name} 
             city={entry.city } 
             description={entry.description} 
-            tags={entry.tags.join(', ')} 
+            tags={entry.tags.join(', ')}
+            price={entry.deliveryPrice} 
           />
         )}
       </section>

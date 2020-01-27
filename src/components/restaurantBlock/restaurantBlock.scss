@@ -26,22 +26,45 @@
 
   &_text {
     padding: 1rem;
+    min-height: 12rem;
 
-    @include default-flex($align: flex-start);
+    @include default-flex($align: flex-start, $justify: space-between);
+
+    * {
+      width: 100%;
+    }
 
     h1 {
       text-transform: uppercase;
       color: $theme-cyan;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      text-align: end;
     }
 
     h3 {
       font-weight: 400;
+      text-align: end;
     }
 
     p {
       margin: 0.5rem 0;
       font-style: italic;
+    }
+
+    &_lower {
+      div {
+        border-top: 1px solid rgb(220, 220, 220);
+        
+        @include default-flex($direction: row, $justify: space-between);
+
+        * {
+          font-weight: 400;
+        }
+
+        h4:last-child {
+          text-align: right;
+        }
+      }
     }
   }
 }
