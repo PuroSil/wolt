@@ -1,16 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { RestaurantContext } from '../../restaurantContext';
 import ImageElement from '../../components/image/image';
+import Button from '../../components/button/button';
+const { restaurantOrder } = require('../../utils/orderRestaurants');
 
 const RestaurantContainer = ({ imgUrl }) => {
-  const restaurants = useContext(RestaurantContext);
+  const [order, setOrder] = useState(false);
+  const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
+
+  const reverseOrder = () => {
+    setOrder(!order);
+    restaurantOrder(restaurantsList, setRestaurantsList, order);
+  };
 
   return (
     <div>
       <ImageElement src={imgUrl} />
+      <Button 
+        text={"Ascending"} 
+        event={reverseOrder} 
+        style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
+      />
+      <Button 
+        text={"Descending"} 
+        event={reverseOrder} 
+        style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
+      />
       <ol>
-        {restaurants &&
-        restaurants.map((entry) =>
+        {restaurantsList &&
+        restaurantsList.map((entry) =>
           <li key={ entry.location }>
             <strong>{ entry.name }</strong>
             , { entry.city }

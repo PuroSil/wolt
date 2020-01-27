@@ -2,6 +2,7 @@ import React, { useEffect,  useState, Suspense, lazy, useMemo } from 'react';
 import { withRouter, Switch, Route, __RouterContext, useLocation } from 'react-router-dom';
 import { config, useTransition, animated } from 'react-spring';
 import axios from 'axios';
+import lodash from 'lodash';
 import Landing from './pages/landing/landing';
 import './app.css';
 import { RestaurantContext } from './restaurantContext';
@@ -11,6 +12,7 @@ const App = () => {
   const [restaurantsList, setRestaurantsList] = useState([]);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation()
+  const providerValue = useMemo(() => ({ restaurantsList, setRestaurantsList }), [restaurantsList, setRestaurantsList]);
 
   // Fetch the restaurant data from the MongoDB database and in the end, use a cleanup function
   // to ensure no memory leaks happen etc.
@@ -21,7 +23,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/api/getAllRestaurants', { cancelToken: source.token });
-          setRestaurantsList(response.data);
+          setRestaurantsList(lodash.sortBy(response.data, ['name']));
       } catch (error) {
         if (axios.isCancel(error)) {
           console.log("Fetch cancelled.");
@@ -48,7 +50,7 @@ const App = () => {
     <div className="app">
       {pageTransitions.map(({item, props, key}) => (
           <animated.div key={key} style={props}>
-            <RestaurantContext.Provider value={restaurantsList}>
+            <RestaurantContext.Provider value={providerValue}>
               <Suspense fallback={<h1>Restaurants loading...</h1>}>
                 <Switch location={item}>
                   <Route path="/" exact component={Landing} />
