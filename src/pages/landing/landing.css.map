@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACAA;;;EAGE;ADAF,AAAA,cAAc,CAAC;EACb,gBAAgB,EAAE,sCAAsC;EACxD,eAAe,EAAE,KAAK;CACvB",
+    "mappings": "ACAA;;;EAGE;ADAF,AAAA,cAAc,CAAC;EACb,gBAAgB,EAAE,oEAAoE;EACtF,eAAe,EAAE,KAAK;EEUvB,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EFVoB,UAAU;EEWzC,cAAc,EAJmD,MAAM;CFNvE",
     "sources": [
         "landing.scss",
         "../../globals/variables.scss",

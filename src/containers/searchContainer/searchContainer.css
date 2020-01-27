@@ -4,6 +4,7 @@
 */
 .container__search {
   width: 20rem;
+  margin-left: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +64,7 @@
 .container__search .input__address img {
   position: absolute;
   left: 1rem;
-  top: 2.5rem;
-  height: 1.6rem;
+  top: 2.6rem;
+  height: 1.4rem;
 }
 /*# sourceMappingURL=searchContainer.css.map */

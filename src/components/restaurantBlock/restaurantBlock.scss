@@ -2,14 +2,46 @@
 @import '../../globals/mixins';
 
 .block__restaurant {
-  width: 20rem;
-  height: 20rem;
-  border: 1px solid rgb(168, 168, 168);
+  width: 22rem;
+  height: auto;
+  min-height: 25rem;
+  box-shadow: 1px 1px 10px 1px rgb(230, 230, 230);
+  border-radius: 0.5rem;
   margin: 1rem;
+  cursor: pointer;
+
+  @include default-transition;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 10px 1px rgb(220, 220, 220);
+  }
 
   &_image {
     background-size: cover;
     height: 60%;
-    min-height: 10rem;
+    min-height: 15rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  &_text {
+    padding: 1rem;
+
+    @include default-flex($align: flex-start);
+
+    h1 {
+      text-transform: uppercase;
+      color: $theme-cyan;
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      font-weight: 400;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      font-style: italic;
+    }
   }
 }

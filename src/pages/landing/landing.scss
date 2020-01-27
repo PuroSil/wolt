@@ -2,6 +2,8 @@
 @import '../../globals/mixins';
 
 .page__landing {
-  background-image: url("../../resources/images/pink.jpg");
+  background-image: url("../../resources/images/hermes-rivera-Ww8eQWjMJWk-unsplash.jpg");
   background-size: cover;
+
+  @include default-flex($align: flex-start);
 }
