@@ -1,0 +1,14 @@
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.container__restaurants {
+  width: 90%;
+
+  @include default-flex;
+
+  &_section_entries {
+    flex-wrap: wrap;
+
+    @include default-flex($direction: row);
+  }
+}

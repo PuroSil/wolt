@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { RestaurantContext } from '../../restaurantContext';
-import ImageElement from '../../components/image/image';
 import Button from '../../components/button/button';
+import RestaurantBlock from '../../components/restaurantBlock/restaurantBlock';
+import './restaurantsContainer.css';
 
-const RestaurantContainer = ({ imgUrl }) => {
+const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
 
@@ -13,30 +14,32 @@ const RestaurantContainer = ({ imgUrl }) => {
   };
 
   return (
-    <div>
-      <ImageElement src={imgUrl} />
-      <Button 
-        text={"Ascending"} 
-        event={reverseOrder} 
-        style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
-      />
-      <Button 
-        text={"Descending"} 
-        event={reverseOrder} 
-        style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
-      />
-      <ol>
+    <div className="container__restaurants">
+      <section>
+        <Button 
+          text={"Ascending"} 
+          event={reverseOrder} 
+          style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
+        />
+        <Button 
+          text={"Descending"} 
+          event={reverseOrder} 
+          style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
+        />
+      </section>
+      <section className="container__restaurants_section_entries">
         {restaurantsList &&
         restaurantsList.map((entry) =>
-          <li key={ entry.location }>
-            <strong>{ entry.name }</strong>
-            , { entry.city }
-            <br/>
-            { entry.tags.join(', ')}
-            <br/>
-          </li>
+          <RestaurantBlock
+            imgUrl={entry.image}
+            key={entry.location} 
+            name={entry.name} 
+            city={entry.city } 
+            description={entry.description} 
+            tags={entry.tags.join(', ')} 
+          />
         )}
-      </ol>
+      </section>
     </div>
   );
 };

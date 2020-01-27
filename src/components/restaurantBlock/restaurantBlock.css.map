@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA;;;EAGE;ADAF,AAAA,kBAAkB,CAAC;EACjB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,OAAkB;EACpC,MAAM,EAAE,IAAI;CAOb;;AALE,AAAD,wBAAO,CAAC;EACN,eAAe,EAAE,KAAK;EACtB,MAAM,EAAE,GAAG;EACX,UAAU,EAAE,KAAK;CAClB",
+    "sources": [
+        "restaurantBlock.scss",
+        "../../globals/variables.scss",
+        "../../globals/mixins.scss"
+    ],
+    "names": [],
+    "file": "restaurantBlock.css"
+}

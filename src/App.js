@@ -1,5 +1,5 @@
 import React, { useEffect,  useState, Suspense, lazy, useMemo } from 'react';
-import { withRouter, Switch, Route, __RouterContext, useLocation } from 'react-router-dom';
+import { withRouter, Switch, Route, useLocation } from 'react-router-dom';
 import { config, useTransition, animated } from 'react-spring';
 import axios from 'axios';
 import lodash from 'lodash';

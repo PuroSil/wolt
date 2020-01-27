@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACAA;;;EAGE;ADAF,AAAA,uBAAuB,CAAC;EACtB,KAAK,EAAE,GAAG;EEWX,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EAHkC,MAAM;EAInD,cAAc,EAJmD,MAAM;CFDvE;;AALE,AAAD,uCAAiB,CAAC;EAChB,SAAS,EAAE,IAAI;EEMlB,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EAHkC,MAAM;EAInD,cAAc,EFPuB,GAAG;CACtC",
     "sources": [
-        "restaurantsContainer.scss"
+        "restaurantsContainer.scss",
+        "../../globals/variables.scss",
+        "../../globals/mixins.scss"
     ],
     "names": [],
     "file": "restaurantsContainer.css"

@@ -1,0 +1,17 @@
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+.block__restaurant {
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid #a8a8a8;
+  margin: 1rem;
+}
+
+.block__restaurant_image {
+  background-size: cover;
+  height: 60%;
+  min-height: 10rem;
+}
+/*# sourceMappingURL=restaurantBlock.css.map */
