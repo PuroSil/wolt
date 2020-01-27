@@ -60,6 +60,7 @@
 .block__restaurant_text_lower div {
   border-top: 1px solid gainsboro;
   color: #646464;
+  padding-top: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -59,8 +59,8 @@ const RestaurantContainer = () => {
         {restaurantsList &&
         restaurantsList.map((entry) =>
         // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants
-        // were between 2 to 3 kilometers, but after faking GPS, I managed to test and see that this works
-        // TODO: Make this less ugly
+        // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
+        // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
           {if(close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 3000) {
             return (
               <RestaurantBlock
@@ -70,7 +70,10 @@ const RestaurantContainer = () => {
                 city={entry.city } 
                 description={entry.description} 
                 tags={entry.tags.join(', ')}
-                price={entry.deliveryPrice} 
+                // Just some calculations for the price for the UI, no idea what the real prices are
+                price={entry.deliveryPrice + Math.round(
+                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 120)
+                } 
               />
             )
           } else if (!close) {
@@ -82,7 +85,9 @@ const RestaurantContainer = () => {
                 city={entry.city } 
                 description={entry.description} 
                 tags={entry.tags.join(', ')}
-                price={entry.deliveryPrice} 
+                price={entry.deliveryPrice + Math.round(
+                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 120)
+                } 
               />
             )
           }
