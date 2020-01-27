@@ -1,8 +1,8 @@
 import React from 'react';
-import RestaurantData from '../../data/restaurantData';
 import { NavLink } from 'react-router-dom';
 import '../pages.css';
 import Button from '../../components/button/button';
+import RestaurantContainer from '../../containers/restaurantContainer/restaurantContainer';
 
 const Results = () => {
   return (
@@ -10,7 +10,7 @@ const Results = () => {
       <NavLink exact to="/" activeClassName="active">
         <Button aria-label="Navigation link" text={"To Landing"}/>
       </NavLink>
-      <RestaurantData />
+      <RestaurantContainer />
     </div>
   );
 };

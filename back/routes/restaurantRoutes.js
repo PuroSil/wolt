@@ -19,6 +19,8 @@ const addRestaurant = async (req, res, next) => {
   };
 };
 
+// create restaurant search that checks if paramaters included in name (includes() lodash or vanilla)
+
 const getAllRestaurants = async (req, res, next) => {
   try {
     const restaurants = await daoGetAllRestaurants();
