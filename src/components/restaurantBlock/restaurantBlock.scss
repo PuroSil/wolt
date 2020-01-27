@@ -34,26 +34,16 @@
       width: 100%;
     }
 
-    h1 {
-      text-transform: uppercase;
-      color: $theme-cyan;
-      font-size: 1.5rem;
-      text-align: end;
-    }
-
-    h3 {
-      font-weight: 400;
-      text-align: end;
-    }
-
     p {
       margin: 0.5rem 0;
       font-style: italic;
+      font-size: 1.1rem;
     }
 
     &_lower {
       div {
         border-top: 1px solid rgb(220, 220, 220);
+        color: rgb(100, 100, 100);
         
         @include default-flex($direction: row, $justify: space-between);
 
@@ -64,6 +54,20 @@
         h4:last-child {
           text-align: right;
         }
+      }
+    }
+
+    &_upper {
+      h1 {
+        text-transform: uppercase;
+        color: $theme-cyan;
+        font-size: 1.5rem;
+        text-align: end;
+      }
+  
+      h3 {
+        font-weight: 400;
+        text-align: end;
       }
     }
   }

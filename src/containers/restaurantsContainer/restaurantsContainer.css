@@ -3,7 +3,6 @@
   font-family: 'Source Sans Pro', sans-serif;
 */
 .container__restaurants {
-  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,5 +34,19 @@
           align-items: flex-start;
   -ms-flex-direction: row;
       flex-direction: row;
+}
+
+.container__restaurants_buttons {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.container__restaurants_buttons button {
+  margin: 1rem 0.2rem 0 1rem;
+}
+
+.container__restaurants_buttons h2 {
+  display: inline-block;
+  font-weight: 400;
 }
 /*# sourceMappingURL=restaurantsContainer.css.map */

@@ -1,0 +1,22 @@
+.page__results {
+  position: relative;
+  padding: 5rem 0;
+  width: 80%;
+  margin: auto;
+
+  img {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    height: 2rem;
+    transform: rotate(7deg);
+  }
+
+  &_title {
+    width: 100%;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+}
+

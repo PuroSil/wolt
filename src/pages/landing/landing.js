@@ -5,11 +5,10 @@ import './landing.css';
 import Button from '../../components/button/button';
 import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
-const { geoLocation } = require('../../utils/geoLocation');
 
 const Landing = () => {
   return (
-    <div onLoad={geoLocation} className="page page__landing">
+    <div className="page page__landing">
       <SearchContainer content={
         <>
           <ImageElement className={"logo"} alt={"Wolt company logo"} src={require("../../resources/images/woltLogo.png")} />
@@ -23,7 +22,7 @@ const Landing = () => {
             </NavLink>
           </span>
           <p>Show me nearby restaurants</p>
-          <NavLink onClick={geoLocation} exact to="/results">
+          <NavLink exact to="/results">
             <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} />
           </NavLink>
         </>

@@ -51,25 +51,15 @@
   width: 100%;
 }
 
-.block__restaurant_text h1 {
-  text-transform: uppercase;
-  color: #009de0;
-  font-size: 1.5rem;
-  text-align: end;
-}
-
-.block__restaurant_text h3 {
-  font-weight: 400;
-  text-align: end;
-}
-
 .block__restaurant_text p {
   margin: 0.5rem 0;
   font-style: italic;
+  font-size: 1.1rem;
 }
 
 .block__restaurant_text_lower div {
   border-top: 1px solid gainsboro;
+  color: #646464;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,5 +81,17 @@
 
 .block__restaurant_text_lower div h4:last-child {
   text-align: right;
+}
+
+.block__restaurant_text_upper h1 {
+  text-transform: uppercase;
+  color: #009de0;
+  font-size: 1.5rem;
+  text-align: end;
+}
+
+.block__restaurant_text_upper h3 {
+  font-weight: 400;
+  text-align: end;
 }
 /*# sourceMappingURL=restaurantBlock.css.map */
