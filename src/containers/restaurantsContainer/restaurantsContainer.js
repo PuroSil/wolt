@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { RestaurantContext } from '../../restaurantContext';
 import ImageElement from '../../components/image/image';
 import Button from '../../components/button/button';
-const { restaurantOrder } = require('../../utils/orderRestaurants');
 
 const RestaurantContainer = ({ imgUrl }) => {
   const [order, setOrder] = useState(false);
@@ -10,7 +9,7 @@ const RestaurantContainer = ({ imgUrl }) => {
 
   const reverseOrder = () => {
     setOrder(!order);
-    restaurantOrder(restaurantsList, setRestaurantsList, order);
+    setRestaurantsList([...restaurantsList.reverse()]);
   };
 
   return (
