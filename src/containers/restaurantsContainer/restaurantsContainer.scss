@@ -7,7 +7,7 @@
   &_section_entries {
     flex-flow: column wrap;
 
-    @include default-flex($direction: row, $align: flex-start, $justify: center);
+    @include default-flex($direction: row, $align: flex-start, $justify: space-between);
   }
 
   &_buttons {
