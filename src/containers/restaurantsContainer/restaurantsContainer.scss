@@ -5,9 +5,15 @@
   @include default-flex;
 
   &_section_entries {
-    flex-flow: column wrap;
+    grid-gap: 1rem;
 
-    @include default-flex($direction: row, $align: flex-start, $justify: space-between);
+    @include default-grid($columns: 1fr 1fr 1fr);
+    @include breakpoint-medium {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint-small {
+      grid-template-columns: 1fr;
+    }
   }
 
   &_buttons {
