@@ -15,4 +15,8 @@
   width: 100%;
   overflow: hidden !important;
 }
+
+.app input:focus {
+  outline: none;
+}
 /*# sourceMappingURL=app.css.map */

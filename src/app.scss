@@ -13,4 +13,8 @@
     width: 100%;
     overflow: hidden !important;
   }
+
+  input:focus {
+    outline: none;
+  }
 }

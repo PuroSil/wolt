@@ -36,6 +36,16 @@ const RestaurantContainer = () => {
     );
   };
 
+  // Calculating a placeholder price for the UI based on distance if the user has given their location
+  const price = (el) => {
+    if(userLocation.length === 0) {
+      return el.deliveryPrice        
+    } else if (close && userLocation.length > 0) {
+      return (el.deliveryPrice + Math.round(
+        (distance(el.location[1], el.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 100))
+    }
+  }
+
   return (
     <div className="container__restaurants">
       <section className="container__restaurants_buttons">
@@ -72,10 +82,7 @@ const RestaurantContainer = () => {
                 city={entry.city } 
                 description={entry.description} 
                 tags={entry.tags.join(', ')}
-                // Just some calculations for the price for the UI, no idea what the real prices are
-                price={entry.deliveryPrice + Math.round(
-                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 100)
-                } 
+                price={price(entry)} 
               />
             )
           } else if (!close) {
@@ -87,7 +94,7 @@ const RestaurantContainer = () => {
                 city={entry.city } 
                 description={entry.description} 
                 tags={entry.tags.join(', ')}
-                price={entry.deliveryPrice} 
+                price={price(entry)}              
               />
             )
           }
