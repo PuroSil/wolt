@@ -1,0 +1,58 @@
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.block__sale {
+  width: 100%;
+  height: 20rem;
+  margin: 2rem 0 3rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 10px 1px rgb(230, 230, 230);
+  cursor: pointer;
+
+  @include default-transition;
+  @include default-flex($direction: row);
+
+  &:hover {
+    box-shadow: 1px 1px 10px 1px rgb(220, 220, 220);
+  }
+
+  &_left {
+    background-size: cover;
+    background-position: center;
+    width: 60%;
+    height: inherit;
+  }
+
+  &_right {
+    min-width: 20rem;
+    width: 40%;
+    padding: 2rem;
+    text-align: left;
+
+    @include default-flex($justify: center);
+
+    * {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: $theme-cyan;
+    }
+
+    h1:first-child {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: $pure-black;
+    }
+
+    h2 {
+      font-weight: 400;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+}

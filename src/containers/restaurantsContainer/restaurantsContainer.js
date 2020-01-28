@@ -11,12 +11,17 @@ import { getDistance } from 'geolib';
 // BlurHash could be used to blur out restaurant images in order to focus certain others
 // Leaving the dependency for now
 import { BlurhashCanvas } from "react-blurhash";
+import SaleBlock from '../../components/saleBlock/saleBlock';
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { close, setClose } = useContext(NearbyContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const { userLocation, setUserLocation } = useContext(LocationContext);
+  const saleItem = restaurantsList[Math.floor(Math.random() * restaurantsList.length)];
+
+  console.log(saleItem)
+
 
   const reverseOrder = () => {
     setOrder(!order);
@@ -51,6 +56,15 @@ const RestaurantContainer = () => {
 
   return (
     <div className="container__restaurants">
+      {saleItem ? 
+        <SaleBlock 
+          name={saleItem.name} 
+          city={saleItem.city} 
+          description={saleItem.description}
+          imgUrl={saleItem.image} 
+        /> 
+        : null
+      }
       <section className="container__restaurants_buttons">
         <div className="container__restaurants_buttons_left">
           <h2>Order by name:</h2>
@@ -78,7 +92,6 @@ const RestaurantContainer = () => {
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
         // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
           {if(close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 1000) {
-            console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
               <RestaurantBlock
                 imgUrl={entry.image}
