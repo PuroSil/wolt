@@ -5,14 +5,14 @@ import { LocationContext } from '../../context/locationContext';
 import { NearbyContext } from '../../context/nearbyContext';
 import Button from '../../components/button/button';
 import RestaurantBlock from '../../components/restaurantBlock/restaurantBlock';
+import SaleBlock from '../../components/saleBlock/saleBlock';
 import './restaurantsContainer.css';
 // There are several libraries for distance calculating, this one had the most support
 // and seems somewhat future proof until I get Google Maps API to work
 import { getDistance } from 'geolib';
-// BlurHash could be used to blur out restaurant images in order to focus certain others
+// BlurHash could be used to blur out restaurant images in order to e.g. focus more on certain others
 // Leaving the dependency for now
 import { BlurhashCanvas } from "react-blurhash";
-import SaleBlock from '../../components/saleBlock/saleBlock';
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
@@ -55,12 +55,14 @@ const RestaurantContainer = () => {
   return (
     <div className="container__restaurants">
       {saleItem ?
-        <SaleBlock 
-          name={`${saleItem.name} -25%`} 
-          city={saleItem.city} 
-          description={saleItem.description}
-          imgUrl={saleItem.image} 
-        /> 
+        <NavLink exact to="/restaurant" activeClassName="active"> 
+          <SaleBlock 
+            name={`${saleItem.name} -25%`} 
+            city={saleItem.city} 
+            description={saleItem.description}
+            imgUrl={saleItem.image} 
+          /> 
+        </NavLink>
       : null
       }
       <section className="container__restaurants_buttons">
