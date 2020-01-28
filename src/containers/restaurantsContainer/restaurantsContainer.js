@@ -34,7 +34,7 @@ const RestaurantContainer = () => {
       { latitude: lat1, longitude: lon1 },
       { latitude: lat2, longitude: lon2 }
     );
-  }
+  };
 
   return (
     <div className="container__restaurants">
@@ -53,6 +53,7 @@ const RestaurantContainer = () => {
         <Button 
           text={"Nearby Restaurants"} 
           event={switchClose} 
+          style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
         />
       </section>
       <section className="container__restaurants_section_entries">
@@ -61,7 +62,8 @@ const RestaurantContainer = () => {
         // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
         // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
-          {if(close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 3000) {
+          {if(close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 1000) {
+            console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
               <RestaurantBlock
                 imgUrl={entry.image}
@@ -72,7 +74,7 @@ const RestaurantContainer = () => {
                 tags={entry.tags.join(', ')}
                 // Just some calculations for the price for the UI, no idea what the real prices are
                 price={entry.deliveryPrice + Math.round(
-                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 120)
+                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 100)
                 } 
               />
             )
@@ -85,9 +87,7 @@ const RestaurantContainer = () => {
                 city={entry.city } 
                 description={entry.description} 
                 tags={entry.tags.join(', ')}
-                price={entry.deliveryPrice + Math.round(
-                  (distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 120)
-                } 
+                price={entry.deliveryPrice} 
               />
             )
           }

@@ -23,4 +23,8 @@
       box-shadow: 2px 2px 6px rgb(199, 199, 199);
     }
   }
+
+  &:focus, input:focus {
+    outline: none;
+  }
 }

@@ -27,4 +27,8 @@
   -webkit-box-shadow: 2px 2px 6px #c7c7c7;
           box-shadow: 2px 2px 6px #c7c7c7;
 }
+
+.button:focus, .button input:focus {
+  outline: none;
+}
 /*# sourceMappingURL=button.css.map */
