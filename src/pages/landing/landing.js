@@ -6,9 +6,11 @@ import Button from '../../components/button/button';
 import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
 import { NearbyContext } from '../../context/nearbyContext';
+import { LocationContext } from '../../context/locationContext';
 
 const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
+  const { userLocation, setUserLocation } = useContext(LocationContext);
 
   const switchClose = () => {
     setClose(!close);
@@ -29,7 +31,9 @@ const Landing = () => {
             </NavLink>
           </span>
           <p>Show me nearby restaurants</p>
-          <NavLink exact to="/results">
+          <NavLink exact to="/results" 
+            style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
+          >
             <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} event={switchClose} />
           </NavLink>
         </>
