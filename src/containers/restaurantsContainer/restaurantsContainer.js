@@ -76,11 +76,14 @@ const RestaurantContainer = () => {
             style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
           />
         </div>
-        <Button
-          text={ close ? "All Restaurants" : "Nearby Restaurants"} 
-          event={switchClose} 
-          style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
-        />
+        <div className="container__restaurants_buttons_right">
+          <h2>Show nearby:</h2>
+          <Button
+            text={ close ? "All" : "Nearby"} 
+            event={switchClose} 
+            style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
+          />
+          </div>
       </section>
       <section className="container__restaurants_section_entries">
         {restaurantsList &&
@@ -88,7 +91,8 @@ const RestaurantContainer = () => {
         // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
         // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
-          {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 1000) {
+          {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 2400) {
+            console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
               <RestaurantBlock
                 imgUrl={entry.image}
@@ -101,18 +105,6 @@ const RestaurantContainer = () => {
               />
             )
           } else if (!close) {
-            return (
-              <RestaurantBlock
-                imgUrl={entry.image}
-                key={entry.location} 
-                name={entry.name} 
-                city={entry.city } 
-                description={entry.description} 
-                tags={entry.tags.join(', ')}
-                price={price(entry)}              
-              />
-            )
-          } else {
             return (
               <RestaurantBlock
                 imgUrl={entry.image}

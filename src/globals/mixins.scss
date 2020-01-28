@@ -6,7 +6,7 @@
 }
 
 @mixin breakpoint-medium() {
-	@media (max-width: 1150px) {
+	@media (max-width: 1250px) {
 		@content;
 	}
 }

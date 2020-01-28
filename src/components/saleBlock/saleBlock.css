@@ -4,7 +4,7 @@
 */
 .block__sale {
   width: 100%;
-  min-height: 20rem;
+  height: 20rem;
   margin: 2rem 0 3rem 0;
   border-radius: 0.5rem;
   -webkit-box-shadow: 1px 1px 10px 1px #e6e6e6;
