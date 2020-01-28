@@ -33,7 +33,7 @@ const Landing = () => {
             <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} event={switchClose} />
           </NavLink>
         </>
-      } />
+      }/>
     </div>
   );
 };
