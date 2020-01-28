@@ -25,12 +25,17 @@ const addRestaurant = async (req, res, next) => {
 // try to make it work with dao
 const getRestaurantsByName = async (req, res, next) => {
   try {
-    const restaurants = await Restaurant.find({
-       $or:[{name:{'$regex' : req.query.name, '$options' : 'i'}},
-       {tags:{'$regex' : req.query.name, '$options' : 'i'}},
-       {description:{'$regex' : req.query.name, '$options' : 'i'}}
-     ]});
-    return res.json(restaurants);
+    if(req.query.name.length > 0) {
+      const restaurants = await Restaurant.find({
+        $or:
+          [{name:{'$regex' : req.query.name, '$options' : 'i'}},
+          {tags:{'$regex' : req.query.name, '$options' : 'i'}},
+          {description:{'$regex' : req.query.name, '$options' : 'i'}}]
+      });
+      return res.json(restaurants);
+    } else {
+      return;
+    }
   } catch (err) {
     return next(res.send({
       message: err.toString()
