@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { RestaurantContext } from '../../restaurantContext';
-import { LocationContext } from '../../locationContext';
+import { RestaurantContext } from '../../context/restaurantContext';
+import { LocationContext } from '../../context/locationContext';
+import { NearbyContext } from '../../context/nearbyContext';
 import Button from '../../components/button/button';
 import RestaurantBlock from '../../components/restaurantBlock/restaurantBlock';
 import './restaurantsContainer.css';
@@ -13,7 +14,7 @@ import { BlurhashCanvas } from "react-blurhash";
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
-  const [close, setClose] = useState(false);
+  const { close, setClose } = useContext(NearbyContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const { userLocation, setUserLocation } = useContext(LocationContext);
 
@@ -39,29 +40,33 @@ const RestaurantContainer = () => {
   // Calculating a placeholder price for the UI based on distance if the user has given their location
   const price = (el) => {
     if(userLocation.length === 0) {
-      return el.deliveryPrice        
+      return el.deliveryPrice;        
     } else if (close && userLocation.length > 0) {
       return (el.deliveryPrice + Math.round(
         (distance(el.location[1], el.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 100))
+    } else {
+      return el.deliveryPrice + 0;
     }
   }
 
   return (
     <div className="container__restaurants">
       <section className="container__restaurants_buttons">
-        <h2>Order by name:</h2>
-        <Button 
-          text={"Ascending"} 
-          event={reverseOrder} 
-          style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
-        />
-        <Button 
-          text={"Descending"} 
-          event={reverseOrder} 
-          style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
-        />
-        <Button 
-          text={"Nearby Restaurants"} 
+        <div className="container__restaurants_buttons_left">
+          <h2>Order by name:</h2>
+          <Button 
+            text={"Ascending"} 
+            event={reverseOrder} 
+            style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
+          />
+          <Button 
+            text={"Descending"} 
+            event={reverseOrder} 
+            style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
+          />
+        </div>
+        <Button
+          text={ close ? "All Restaurants" : "Nearby Restaurants"} 
           event={switchClose} 
           style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
         />

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../pages.css';
 import './landing.css';
 import Button from '../../components/button/button';
 import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
+import { NearbyContext } from '../../context/nearbyContext';
 
 const Landing = () => {
+  const { close, setClose } = useContext(NearbyContext);
+
+  const switchClose = () => {
+    setClose(!close);
+  };
+
   return (
     <div className="page page__landing">
       <SearchContainer content={
@@ -23,7 +30,7 @@ const Landing = () => {
           </span>
           <p>Show me nearby restaurants</p>
           <NavLink exact to="/results">
-            <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} />
+            <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} event={switchClose} />
           </NavLink>
         </>
       } />

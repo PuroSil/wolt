@@ -10,6 +10,8 @@
   font-size: 1.2rem;
   font-weight: 500;
   font-family: 'Dosis', sans-serif;
+  white-space: nowrap;
+  min-width: 10rem;
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
 }

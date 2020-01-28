@@ -5,8 +5,9 @@ import axios from 'axios';
 import lodash from 'lodash';
 import Landing from './pages/landing/landing';
 import './app.css';
-import { RestaurantContext } from './restaurantContext';
-import { LocationContext } from './locationContext';
+import { RestaurantContext } from './context/restaurantContext';
+import { LocationContext } from './context/locationContext';
+import { NearbyContext } from './context/nearbyContext';
 // The restaurant listing loads a large amount of images and data which might slow
 // the rendering of pages down which why lazy loading to ease things a bit 
 const Results = lazy(() => import('./pages/results/results'));
@@ -15,13 +16,15 @@ const App = () => {
   const [restaurantsList, setRestaurantsList] = useState([]);
   const [userLocation, setUserLocation] = useState([]);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [close, setClose] = useState(false);
+
   const location = useLocation()
+  const nearbyProvider = useMemo(() => ({ close, setClose }), [close, setClose]);
   const restaurantProvider = useMemo(() => ({ restaurantsList, setRestaurantsList }), [restaurantsList, setRestaurantsList]);
   const locationProvider = useMemo(() => ({ userLocation, setUserLocation }), [userLocation, setUserLocation]);
 
   // We ask the user to share us their position coordinates so we can calculate
   // the price of delivery for the UI
-
   const geoLocation = () => {
     if (navigator.geolocation) {
       return navigator.geolocation.getCurrentPosition(position);
@@ -70,6 +73,7 @@ const App = () => {
     <div className="app" onLoad={geoLocation}>
       {pageTransitions.map(({item, props, key}) => (
           <animated.div key={key} style={props}>
+            <NearbyContext.Provider value={nearbyProvider}>
             <LocationContext.Provider value={locationProvider}>
             <RestaurantContext.Provider value={restaurantProvider}>
               <Suspense fallback={<h1>Restaurants loading...</h1>}>
@@ -80,6 +84,7 @@ const App = () => {
               </Suspense>
             </RestaurantContext.Provider>
             </LocationContext.Provider>
+            </NearbyContext.Provider>
           </animated.div>
       ))}
     </div>

@@ -9,6 +9,8 @@
   font-size: $size-one-plus-two-tenths;
   font-weight: 500;
   font-family: 'Dosis', sans-serif;
+  white-space: nowrap;
+  min-width: 10rem;
 
   @include default-transition;
 
