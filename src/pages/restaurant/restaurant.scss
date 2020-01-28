@@ -1,4 +1,7 @@
-.page__results {
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.page__restaurant {
   position: relative;
   padding: 5rem 0;
   width: 70%;
@@ -12,12 +15,4 @@
     height: 2rem;
     transform: rotate(7deg);
   }
-
-  &_title {
-    width: 100%;
-    font-weight: 400;
-    font-size: 3rem;
-    margin: 2rem 0;
-  }
 }
-

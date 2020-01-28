@@ -22,8 +22,21 @@
 
     @include default-flex($direction: row, $justify: space-between);
     @include breakpoint-medium {
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: flex-start;
+    }
+    
+    * {
+      @include breakpoint-small {
+        width: 100%;
+        margin-left: 0 !important;
+      }
+    }
+
+    &_right {
+      @include breakpoint-medium {
+        margin-bottom: 1rem;
+      }
     }
 
     button {
@@ -37,10 +50,17 @@
     h2 {
       display: inline-block;
       font-weight: 400;
+      min-width: 8rem;
 
       @include breakpoint-medium {
         font-size: 1.2rem;
       }
     }
+  }
+
+  a {
+    width: 100%;
+    text-decoration: none;
+    color: $pure-black;
   }
 }

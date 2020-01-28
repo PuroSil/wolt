@@ -4,6 +4,7 @@ import { config, useTransition, animated } from 'react-spring';
 import axios from 'axios';
 import lodash from 'lodash';
 import Landing from './pages/landing/landing';
+import Restaurant from './pages/restaurant/restaurant';
 import './app.css';
 import { RestaurantContext } from './context/restaurantContext';
 import { LocationContext } from './context/locationContext';
@@ -80,6 +81,7 @@ const App = () => {
                 <Switch location={item}>
                   <Route path="/" exact component={Landing} />
                   <Route path="/results" component={Results} />
+                  <Route path="/restaurant" component={Restaurant} />
                 </Switch>
               </Suspense>
             </RestaurantContext.Provider>

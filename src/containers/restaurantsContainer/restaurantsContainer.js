@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { RestaurantContext } from '../../context/restaurantContext';
 import { LocationContext } from '../../context/locationContext';
 import { NearbyContext } from '../../context/nearbyContext';
@@ -53,14 +54,14 @@ const RestaurantContainer = () => {
 
   return (
     <div className="container__restaurants">
-      {saleItem ? 
+      {saleItem ?
         <SaleBlock 
-          name={saleItem.name} 
+          name={`${saleItem.name} -25%`} 
           city={saleItem.city} 
           description={saleItem.description}
           imgUrl={saleItem.image} 
         /> 
-        : null
+      : null
       }
       <section className="container__restaurants_buttons">
         <div className="container__restaurants_buttons_left">
@@ -94,27 +95,31 @@ const RestaurantContainer = () => {
           {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 2400) {
             console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
-              <RestaurantBlock
-                imgUrl={entry.image}
-                key={entry.location} 
-                name={entry.name} 
-                city={entry.city } 
-                description={entry.description} 
-                tags={entry.tags.join(', ')}
-                price={price(entry)} 
-              />
+              <NavLink exact to="/restaurant" activeClassName="active">
+                <RestaurantBlock
+                  imgUrl={entry.image}
+                  key={entry.location} 
+                  name={entry.name} 
+                  city={entry.city } 
+                  description={entry.description} 
+                  tags={entry.tags.join(', ')}
+                  price={price(entry)} 
+                />
+              </NavLink>
             )
           } else if (!close) {
             return (
-              <RestaurantBlock
-                imgUrl={entry.image}
-                key={entry.location} 
-                name={entry.name} 
-                city={entry.city } 
-                description={entry.description} 
-                tags={entry.tags.join(', ')}
-                price={price(entry)}              
-              />
+              <NavLink exact to="/restaurant" activeClassName="active">
+                <RestaurantBlock
+                  imgUrl={entry.image}
+                  key={entry.location} 
+                  name={entry.name} 
+                  city={entry.city } 
+                  description={entry.description} 
+                  tags={entry.tags.join(', ')}
+                  price={price(entry)} 
+                />
+              </NavLink>
             )
           }
         })}

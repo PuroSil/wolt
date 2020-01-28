@@ -1,4 +1,8 @@
-.page__results {
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+.page__restaurant {
   position: relative;
   padding: 5rem 0;
   width: 70%;
@@ -6,7 +10,7 @@
   margin: auto;
 }
 
-.page__results img {
+.page__restaurant img {
   position: absolute;
   top: 2rem;
   left: 0;
@@ -14,11 +18,4 @@
   -webkit-transform: rotate(7deg);
           transform: rotate(7deg);
 }
-
-.page__results_title {
-  width: 100%;
-  font-weight: 400;
-  font-size: 3rem;
-  margin: 2rem 0;
-}
-/*# sourceMappingURL=results.css.map */
+/*# sourceMappingURL=restaurant.css.map */
