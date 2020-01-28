@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Restaurant = require('../models/restaurantModel');
 const {
   daoAddRestaurant,
   daoGetAllRestaurants,
@@ -21,11 +22,10 @@ const addRestaurant = async (req, res, next) => {
 };
 
 // create restaurant search that checks if paramaters included in name (includes() lodash or vanilla)
+// try to make it work with dao
 const getRestaurantsByName = async (req, res, next) => {
   try {
-    const restaurants = await daoGetRestaurantsByName(
-      req.query.name,
-    );
+    const restaurants = await Restaurant.find({ name:{'$regex' : req.query.name, '$options' : 'i'} });
     return res.json(restaurants);
   } catch (err) {
     return next(res.send({
