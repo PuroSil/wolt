@@ -6,6 +6,12 @@ const daoAddRestaurant = async (restaurant) => {
   return savedRestaurant;
 };
 
+const daoGetRestaurantsByName = async (name) => {
+  const restaurants = await Restaurant.find({ name });
+  return restaurants;
+};
+
+
 const daoGetAllRestaurants = async () => {
   const restaurants = await Restaurant.find({});
   return restaurants;
@@ -13,5 +19,6 @@ const daoGetAllRestaurants = async () => {
 
 module.exports = {
   daoAddRestaurant,
-  daoGetAllRestaurants
+  daoGetAllRestaurants,
+  daoGetRestaurantsByName
 };
