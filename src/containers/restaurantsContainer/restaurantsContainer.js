@@ -20,9 +20,6 @@ const RestaurantContainer = () => {
   const { userLocation, setUserLocation } = useContext(LocationContext);
   const saleItem = restaurantsList[Math.floor(Math.random() * restaurantsList.length)];
 
-  console.log(saleItem)
-
-
   const reverseOrder = () => {
     setOrder(!order);
     setRestaurantsList([...restaurantsList.reverse()]);

@@ -2,12 +2,13 @@
 @import '../../globals/mixins';
 
 .block__restaurant {
-  width: 22rem;
+  width: 32%;
+  min-width: 22rem;
   height: auto;
   min-height: 25rem;
   box-shadow: 1px 1px 10px 1px rgb(230, 230, 230);
   border-radius: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem;
   cursor: pointer;
 
   @include default-transition;

@@ -3,13 +3,14 @@
   font-family: 'Source Sans Pro', sans-serif;
 */
 .block__restaurant {
-  width: 22rem;
+  width: 32%;
+  min-width: 22rem;
   height: auto;
   min-height: 25rem;
   -webkit-box-shadow: 1px 1px 10px 1px #e6e6e6;
           box-shadow: 1px 1px 10px 1px #e6e6e6;
   border-radius: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem;
   cursor: pointer;
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
