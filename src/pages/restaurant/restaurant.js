@@ -3,8 +3,13 @@ import ImageElement from '../../components/image/image';
 import { NavLink } from 'react-router-dom';
 import Button from '../../components/button/button';
 import './restaurant.css';
+import MenuItem from '../../components/menuItem/menuItem';
 
 const Restaurant = (imgUrl) => {
+
+  const scrollIntoCategory = () => {
+  }
+
   return (
     <div className="page page__restaurant" style={{backgroundImage: `url(${imgUrl})`}}>
       <section className="page__restaurant_upper">
@@ -38,6 +43,21 @@ const Restaurant = (imgUrl) => {
           It would include a basic information about the restaurant and the type of food offered and some 
           fluff text to further raise the interest of a potential customer and give a brief overview.
           </h3>
+          <h2 className="page__restaurant_category_title">Category one</h2>
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <h2 className="page__restaurant_category_title">Category two</h2>
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <h2 className="page__restaurant_category_title">Category three</h2>
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
         </section>
         <section className="page__restaurant_lower_right">
           <h2>Open Today:</h2>
@@ -50,6 +70,11 @@ const Restaurant = (imgUrl) => {
               <h3>0 ITEMS</h3>
             </div>
             <Button text={"ORDER"}/>
+            <ul>
+              <li onClick={scrollIntoCategory}>Category one</li>
+              <li onClick={scrollIntoCategory}>Category two</li>
+              <li onClick={scrollIntoCategory}>Category three</li>
+            </ul>
         </section>
       </section>
     </div>

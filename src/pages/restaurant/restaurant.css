@@ -7,6 +7,15 @@
   width: 100%;
 }
 
+.page__restaurant_category_title {
+  width: 100%;
+  margin: 2rem 0;
+  font-weight: 400;
+  font-size: 2.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #b1b1b1;
+}
+
 .page__restaurant_hours {
   width: 9rem;
   display: -webkit-box;
@@ -130,7 +139,7 @@
 .page__restaurant_lower_left {
   width: 70%;
   min-height: 55rem;
-  padding-top: 5rem;
+  padding: 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,6 +157,7 @@
 
 .page__restaurant_lower_left h3 {
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .page__restaurant_lower_right {
@@ -157,7 +167,7 @@
   top: 0;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  padding: 5rem 2rem 2rem 3rem;
+  padding: 5rem 0 0 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,5 +230,41 @@
   height: 3rem;
   -webkit-transform: rotate(7deg);
           transform: rotate(7deg);
+}
+
+.page__restaurant ul {
+  list-style: none;
+  margin: 3rem 0;
+}
+
+.page__restaurant li {
+  margin: 1rem 0;
+  color: #323232;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+}
+
+.page__restaurant li::before {
+  content: "";
+  position: absolute;
+  background-color: #009de0;
+  height: 0.1rem;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+}
+
+.page__restaurant li:hover {
+  color: black;
+  font-weight: 600;
+}
+
+.page__restaurant li:hover::before {
+  width: 100%;
 }
 /*# sourceMappingURL=restaurant.css.map */
