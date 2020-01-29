@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RestaurantContext } from '../../context/restaurantContext';
 import { LocationContext } from '../../context/locationContext';
@@ -13,13 +13,18 @@ import { getDistance } from 'geolib';
 // BlurHash could be used to blur out restaurant images in order to e.g. focus more on certain others
 // Leaving the dependency for now
 import { BlurhashCanvas } from "react-blurhash";
+const { price } = require('../../utils/price');
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { close, setClose } = useContext(NearbyContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const { userLocation } = useContext(LocationContext);
-  const saleItem = restaurantsList[Math.floor(Math.random() * restaurantsList.length)];
+  const [saleItem, setSaleItem] = useState(null);
+
+  useEffect(() => {
+    setSaleItem(restaurantsList[Math.floor(Math.random() * restaurantsList.length)]);
+  }, [restaurantsList]);
 
   const reverseOrder = () => {
     setOrder(!order);
@@ -39,18 +44,6 @@ const RestaurantContainer = () => {
       { latitude: lat2, longitude: lon2 }
     );
   };
-
-  // Calculating a placeholder price for the UI based on distance if the user has given their location
-  const price = (el) => {
-    if(userLocation.length === 0) {
-      return el.deliveryPrice;        
-    } else if (close && userLocation.length > 0) {
-      return (el.deliveryPrice + Math.round(
-        (distance(el.location[1], el.location[0], userLocation[1], userLocation[0]) / 100) * 100 / 100))
-    } else {
-      return el.deliveryPrice + 0;
-    }
-  }
 
   return (
     <div className="container__restaurants">
@@ -104,7 +97,7 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry)} 
+                  price={price(entry, userLocation, distance, close)} 
                 />
               </NavLink>
             )
@@ -118,7 +111,7 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry)} 
+                  price={price(entry, userLocation, distance, close)} 
                 />
               </NavLink>
             )
