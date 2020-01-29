@@ -4,6 +4,12 @@
 .page__restaurant {
   position: relative;
   width: 100%;
+
+  &_hours {
+    width: 9rem;
+
+    @include default-flex($justify: space-between, $direction: row);
+  }
   
   &_upper {
     background-image: url("../../resources/images/aerial-view-of-loaf-breads-1630923.jpg");
@@ -13,12 +19,6 @@
     width: 100%;
     margin-bottom: auto;
     position: relative;
-
-    &_hours {
-      width: 9rem;
-
-      @include default-flex($justify: space-between, $direction: row);
-    }
 
     &_tags {
       position: absolute;
@@ -82,9 +82,14 @@
 
     &_left {
       width: 70%;
-      min-height: 100rem;
+      min-height: 55rem;
+      padding-top: 5rem;
 
-      @include default-flex;
+      @include default-flex($justify: flex-start);
+
+      h3 {
+        font-weight: 400;
+      }
     }
 
     &_right {
@@ -92,13 +97,40 @@
       position: sticky;
       top: 0;
       align-self: flex-start;
-      font-size: 4rem;
-      color: orange;
-      @include default-flex;
+      padding: 5rem 2rem 2rem 3rem;
+      @include default-flex($align: flex-start);
+
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+
+      img {
+        height: 2rem;
+        margin-right: 1rem;
+      }
+
+      button {
+        margin-top: 1rem;
+      }
+
+      .page__restaurant_hours {
+        margin-bottom: 3rem;
+      }
+
+      &_shop {
+        @include default-flex($direction: row, $align: center);
+      }
     }
   }
 
-  img {
+  .logo {
     position: absolute;
     top: 2rem;
     left: 0;

@@ -7,17 +7,7 @@
   width: 100%;
 }
 
-.page__restaurant_upper {
-  background-image: url("../../resources/images/aerial-view-of-loaf-breads-1630923.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  width: 100%;
-  margin-bottom: auto;
-  position: relative;
-}
-
-.page__restaurant_upper_hours {
+.page__restaurant_hours {
   width: 9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,6 +22,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.page__restaurant_upper {
+  background-image: url("../../resources/images/aerial-view-of-loaf-breads-1630923.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+  margin-bottom: auto;
+  position: relative;
 }
 
 .page__restaurant_upper_tags {
@@ -129,13 +129,14 @@
 
 .page__restaurant_lower_left {
   width: 70%;
-  min-height: 100rem;
+  min-height: 55rem;
+  padding-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -143,6 +144,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.page__restaurant_lower_left h3 {
+  font-weight: 400;
 }
 
 .page__restaurant_lower_right {
@@ -152,8 +157,47 @@
   top: 0;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  font-size: 4rem;
-  color: orange;
+  padding: 5rem 2rem 2rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.page__restaurant_lower_right h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page__restaurant_lower_right h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.page__restaurant_lower_right img {
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.page__restaurant_lower_right button {
+  margin-top: 1rem;
+}
+
+.page__restaurant_lower_right .page__restaurant_hours {
+  margin-bottom: 3rem;
+}
+
+.page__restaurant_lower_right_shop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,13 +207,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.page__restaurant img {
+.page__restaurant .logo {
   position: absolute;
   top: 2rem;
   left: 0;
