@@ -23,11 +23,20 @@ const Restaurant = (imgUrl) => {
               <span>10 - 16</span>
             </div>
             <h3>Average delivery time today: 22 min</h3>
+            <div className="page__restaurant_upper_tags">
+              <h4>tag</h4>
+              <h4>tag</h4>
+            </div>
           </section>
         </div>
       </section>
       <section className="page__restaurant_lower">
-        <h1>Lower</h1>
+        <section className="page__restaurant_lower_left">
+          left
+        </section>
+        <section className="page__restaurant_lower_right">
+          right
+        </section>
       </section>
     </div>
   );

@@ -20,6 +20,23 @@
       @include default-flex($justify: space-between, $direction: row);
     }
 
+    &_tags {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+
+      @include default-flex($direction: row);
+
+      h4 {
+        font-weight: 500;
+        font-size: 0.9rem;
+        margin-left: 1rem;
+        background-color: $theme-cyan;
+        padding: 0.3rem 1rem;
+        border-radius: 0.3rem;
+      }
+    }
+
     .black__overlay {
       height: 80vh;
       width: 100%;
@@ -57,7 +74,28 @@
   }
 
   &_lower {
-    @include default-flex;
+    width: 70%;
+    height: auto;
+    position: relative;
+
+    @include default-flex($direction: row);
+
+    &_left {
+      width: 70%;
+      min-height: 100rem;
+
+      @include default-flex;
+    }
+
+    &_right {
+      width: 30%;
+      position: sticky;
+      top: 0;
+      align-self: flex-start;
+      font-size: 4rem;
+      color: orange;
+      @include default-flex;
+    }
   }
 
   img {

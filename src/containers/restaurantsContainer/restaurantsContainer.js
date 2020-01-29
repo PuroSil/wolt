@@ -73,7 +73,7 @@ const RestaurantContainer = () => {
           />
         </div>
         <div className="container__restaurants_buttons_right">
-          <h2>Show nearby:</h2>
+          <h2>Show { close ? "all:" : "nearby:"}</h2>
           <Button
             text={ close ? "All" : "Nearby"} 
             event={switchClose} 

@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../pages.css';
-import './landing.css';
+import { NearbyContext } from '../../context/nearbyContext';
+import { LocationContext } from '../../context/locationContext';
 import Button from '../../components/button/button';
 import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
-import { NearbyContext } from '../../context/nearbyContext';
-import { LocationContext } from '../../context/locationContext';
 import Form from '../../components/form/form';
 import Input from '../../components/input/input';
+import '../pages.css';
+import './landing.css';
 
 const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
 
+  
   const switchClose = () => {
     setClose(!close);
   };

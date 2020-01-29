@@ -82,9 +82,14 @@
   }
 }
 
+.container__restaurants_buttons_right {
+  text-align: right;
+}
+
 @media (max-width: 1250px) {
   .container__restaurants_buttons_right {
     margin-bottom: 1rem;
+    text-align: left;
   }
 }
 
