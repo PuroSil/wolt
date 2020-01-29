@@ -5,6 +5,9 @@ import Button from '../../components/button/button';
 import './restaurant.css';
 import MenuItem from '../../components/menuItem/menuItem';
 
+//The restaurant page will mostly just be a static page
+//as I lack dynamic data and menus, this is merely a 
+//here to give an idea of the layout
 const Restaurant = (imgUrl) => {
 
   const scrollIntoCategory = () => {
