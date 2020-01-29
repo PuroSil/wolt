@@ -3,16 +3,68 @@
 
 .page__restaurant {
   position: relative;
-  padding: 5rem 0;
-  width: 70%;
-  max-width: 1400px;
-  margin: auto;
+  width: 100%;
+  
+  &_upper {
+    background-image: url("../../resources/images/aerial-view-of-loaf-breads-1630923.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    margin-bottom: auto;
+    position: relative;
+
+    &_hours {
+      width: 9rem;
+
+      @include default-flex($justify: space-between, $direction: row);
+    }
+
+    .black__overlay {
+      height: 80vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+    }
+
+    &_content {
+      height: 80vh;
+      width: 70%;
+      margin: auto;
+      position: relative;
+      color: $pure-white;
+    
+      @include default-flex($align: flex-start);
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-weight: 400;
+        margin: 2rem 0 1rem 0;
+      }
+
+      h3 {
+        font-weight: 400;
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &_lower {
+    @include default-flex;
+  }
 
   img {
     position: absolute;
     top: 2rem;
     left: 0;
-    height: 2rem;
+    height: 3rem;
     transform: rotate(7deg);
   }
 }

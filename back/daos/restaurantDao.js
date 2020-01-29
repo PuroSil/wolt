@@ -6,6 +6,7 @@ const daoAddRestaurant = async (restaurant) => {
   return savedRestaurant;
 };
 
+//Not in use for now
 const daoGetRestaurantsByName = async (name) => {
   const restaurants = await Restaurant.find({ name });
   return restaurants;
