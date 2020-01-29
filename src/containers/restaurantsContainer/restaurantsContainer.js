@@ -18,7 +18,7 @@ const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { close, setClose } = useContext(NearbyContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
-  const { userLocation, setUserLocation } = useContext(LocationContext);
+  const { userLocation } = useContext(LocationContext);
   const saleItem = restaurantsList[Math.floor(Math.random() * restaurantsList.length)];
 
   const reverseOrder = () => {
@@ -95,7 +95,6 @@ const RestaurantContainer = () => {
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
         // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
           {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 2400) {
-            console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
               <NavLink exact to="/restaurant" key={entry.name}>
                 <RestaurantBlock
@@ -123,6 +122,8 @@ const RestaurantContainer = () => {
                 />
               </NavLink>
             )
+          } else {
+            return null;
           }
         })}
       </section>

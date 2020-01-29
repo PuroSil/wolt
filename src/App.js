@@ -1,27 +1,22 @@
-import React, { useEffect,  useState, Suspense, lazy, useMemo } from 'react';
+import React, { useState, Suspense, lazy, useMemo } from 'react';
 import { withRouter, Switch, Route, useLocation } from 'react-router-dom';
 import { config, useTransition, animated } from 'react-spring';
-import axios from 'axios';
-import lodash from 'lodash';
-import Landing from './pages/landing/landing';
-import Restaurant from './pages/restaurant/restaurant';
-import './app.css';
-import { RestaurantContext } from './context/restaurantContext';
 import { LocationContext } from './context/locationContext';
 import { NearbyContext } from './context/nearbyContext';
+import Landing from './pages/landing/landing';
+import Restaurant from './pages/restaurant/restaurant';
+import RestaurantContextProvider from './context/restaurantContext';
+import './app.css';
 // The restaurant listing loads a large amount of images and data which might slow
 // the rendering of pages down which why lazy loading to ease things a bit 
 const Results = lazy(() => import('./pages/results/results'));
 
 const App = () => {
-  const [restaurantsList, setRestaurantsList] = useState([]);
   const [userLocation, setUserLocation] = useState([]);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [close, setClose] = useState(false);
 
   const location = useLocation()
   const nearbyProvider = useMemo(() => ({ close, setClose }), [close, setClose]);
-  const restaurantProvider = useMemo(() => ({ restaurantsList, setRestaurantsList }), [restaurantsList, setRestaurantsList]);
   const locationProvider = useMemo(() => ({ userLocation, setUserLocation }), [userLocation, setUserLocation]);
 
   // We ask the user to share us their position coordinates so we can calculate
@@ -38,30 +33,6 @@ const App = () => {
     setUserLocation([...userLocation, position.coords.longitude, position.coords.latitude]);
   }
 
-  // Fetch the restaurant data from the MongoDB database and in the end, use a cleanup function
-  // to ensure no memory leaks happen etc.
-  useEffect(() => {
-    const CancelToken = axios.CancelToken;
-    const source = CancelToken.source();
-    
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/getAllRestaurants', { cancelToken: source.token });
-          setRestaurantsList(lodash.sortBy(response.data, ['name']));
-      } catch (error) {
-        if (axios.isCancel(error)) {
-          console.log("Fetch cancelled.");
-        } else {
-          throw error;
-        }
-      };
-    };
-    fetchData();
-    return () => {
-      source.cancel();
-    };
-  }, []);
-
   // React Spring animation settings
   const pageTransitions = useTransition(location, location => location.pathname, {
     from: { opacity: 0, transform: "translate(100%, 0)" },
@@ -76,7 +47,7 @@ const App = () => {
           <animated.div key={key} style={props}>
             <NearbyContext.Provider value={nearbyProvider}>
             <LocationContext.Provider value={locationProvider}>
-            <RestaurantContext.Provider value={restaurantProvider}>
+            <RestaurantContextProvider content={
               <Suspense fallback={<h1>Restaurants loading...</h1>}>
                 <Switch location={item}>
                   <Route path="/" exact component={Landing} />
@@ -84,7 +55,8 @@ const App = () => {
                   <Route path="/restaurant" component={Restaurant} />
                 </Switch>
               </Suspense>
-            </RestaurantContext.Provider>
+              }>
+            </RestaurantContextProvider>
             </LocationContext.Provider>
             </NearbyContext.Provider>
           </animated.div>

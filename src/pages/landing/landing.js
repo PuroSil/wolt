@@ -10,7 +10,7 @@ import { LocationContext } from '../../context/locationContext';
 
 const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
-  const { userLocation, setUserLocation } = useContext(LocationContext);
+  const { userLocation } = useContext(LocationContext);
 
   const switchClose = () => {
     setClose(!close);
