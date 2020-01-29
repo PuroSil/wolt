@@ -24,6 +24,7 @@
     background-position: center;
     width: 60%;
     min-height: 20rem;
+    border-radius: 0.5rem 0 0 0.5rem;
 
     @include breakpoint-small {
       width: 100%;
