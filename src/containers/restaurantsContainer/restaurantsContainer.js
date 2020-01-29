@@ -97,7 +97,7 @@ const RestaurantContainer = () => {
           {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 2400) {
             console.log(distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]))
             return (
-              <NavLink exact to="/restaurant" activeClassName="active">
+              <NavLink exact to="/restaurant" key={entry.name}>
                 <RestaurantBlock
                   imgUrl={entry.image}
                   key={entry.location} 
@@ -111,7 +111,7 @@ const RestaurantContainer = () => {
             )
           } else if (!close) {
             return (
-              <NavLink exact to="/restaurant" activeClassName="active">
+              <NavLink exact to="/restaurant" key={entry.name}>
                 <RestaurantBlock
                   imgUrl={entry.image}
                   key={entry.location} 
