@@ -37,7 +37,7 @@ const RestaurantContextProvider = ({ content }) => {
     <RestaurantContext.Provider value={restaurantProvider}>
       {content}
     </RestaurantContext.Provider>
-  )
-}
+  );
+};
 
 export default RestaurantContextProvider;
