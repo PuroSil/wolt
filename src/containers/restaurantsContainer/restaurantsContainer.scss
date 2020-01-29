@@ -2,10 +2,13 @@
 @import '../../globals/mixins';
 
 .container__restaurants {
+  width: 100%;
+
   @include default-flex;
 
   &_section_entries {
     grid-gap: 1rem;
+    width: 100%;
 
     @include default-grid($columns: 1fr 1fr 1fr);
     @include breakpoint-medium {

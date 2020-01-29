@@ -42,20 +42,4 @@
 .container__search p {
   font-size: 1.1rem;
 }
-
-.container__search .input__address {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.container__search .input__address p {
-  padding-bottom: 0.5rem;
-}
-
-.container__search .input__address img {
-  position: absolute;
-  left: 1rem;
-  top: 2.6rem;
-  height: 1.4rem;
-}
 /*# sourceMappingURL=searchContainer.css.map */

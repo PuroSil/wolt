@@ -19,4 +19,20 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.page__landing form {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.page__landing form p {
+  padding-bottom: 0.5rem;
+}
+
+.page__landing form img {
+  position: absolute;
+  left: 1rem;
+  top: 2.6rem;
+  height: 1.4rem;
+}
 /*# sourceMappingURL=landing.css.map */

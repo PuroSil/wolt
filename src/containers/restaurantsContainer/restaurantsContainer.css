@@ -3,6 +3,7 @@
   font-family: 'Source Sans Pro', sans-serif;
 */
 .container__restaurants {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,6 +21,7 @@
 
 .container__restaurants_section_entries {
   grid-gap: 1rem;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   justify-items: center;

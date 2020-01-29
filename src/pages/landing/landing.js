@@ -7,6 +7,8 @@ import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
 import { NearbyContext } from '../../context/nearbyContext';
 import { LocationContext } from '../../context/locationContext';
+import Form from '../../components/form/form';
+import Input from '../../components/input/input';
 
 const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
@@ -22,14 +24,16 @@ const Landing = () => {
         <>
           <ImageElement className={"logo"} alt={"Wolt company logo"} src={require("../../resources/images/woltLogo.png")} />
           <h3>The ecological way of filling your culinary desires</h3>
-          <span className="input__address">
-            <ImageElement className={""} alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
-            <p>Where do you want it delivered?</p>
-            <input type="text" placeholder="Type your address..." id="input__address"></input>
-            <NavLink exact to="/results">
-              <Button aria-label="Navigation link" text={"SEARCH FOR RESTAURANTS"} />
-            </NavLink>
-          </span>
+            <Form className={"search__form"} content={
+              <>
+                <ImageElement className={""} alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
+                <p>Where do you want it delivered?</p>
+                <Input type={"text"} placeholder={"Type your address..."} />
+                <NavLink exact to="/results">
+                  <Button aria-label="Navigation link" text={"SEARCH FOR RESTAURANTS"} />
+                </NavLink>
+              </>
+            }/>
           <p>Show me nearby restaurants</p>
           <NavLink exact to="/results" 
             style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}

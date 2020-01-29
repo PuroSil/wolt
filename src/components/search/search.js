@@ -3,6 +3,7 @@ import axios from 'axios';
 import Button from '../button/button';
 import { RestaurantContext } from '../../context/restaurantContext';
 import Input from '../input/input';
+import Form from '../form/form';
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -23,21 +24,23 @@ const Search = () => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="search__form">
-      <Input 
-        type={"text"} 
-        value={inputValue} 
-        placeholder={"Search..."} 
-        change={onChange} 
-        event={e => setSearchValue(e.target.value)}
-        className={"search__input"}
-      />
-      <Button 
-        type={"submit"} 
-        text={"SEARCH"} 
-        className={"search__button"}
-      />
-    </form>
+    <Form onSubmit={onSubmit} className={"search__form"} content={
+      <>
+        <Input 
+          type={"text"} 
+          value={inputValue} 
+          placeholder={"Search..."} 
+          change={onChange} 
+          event={e => setSearchValue(e.target.value)}
+          className={"search__input"}
+        />
+        <Button 
+          type={"submit"} 
+          text={"SEARCH"} 
+          className={"search__button"}
+        />
+      </>
+    }/>
   );
 };
 
