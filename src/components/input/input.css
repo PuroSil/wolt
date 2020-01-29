@@ -1,0 +1,33 @@
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+input[type=text] {
+  padding: 0.8rem 2rem 0.8rem 3.5rem;
+  border-radius: 3rem;
+  border: 1px solid #c8c8c8;
+  width: 20rem;
+  margin-bottom: 0.5rem;
+}
+
+.search__form {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+.search__input[type=text] {
+  height: 2rem;
+  padding-left: 2rem;
+  margin: 0;
+  border-radius: 0.2rem 0 0 0.2rem;
+  width: 15rem;
+}
+
+.search__button {
+  font-size: 0.8rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+  min-width: 0;
+  margin-left: 0.5rem;
+}
+/*# sourceMappingURL=input.css.map */

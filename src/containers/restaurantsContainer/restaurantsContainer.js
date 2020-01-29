@@ -18,8 +18,8 @@ const { price } = require('../../utils/price');
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { close, setClose } = useContext(NearbyContext);
-  const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const { userLocation } = useContext(LocationContext);
+  const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const [saleItem, setSaleItem] = useState(null);
 
   useEffect(() => {
@@ -62,12 +62,12 @@ const RestaurantContainer = () => {
         <div className="container__restaurants_buttons_left">
           <h2>Order by name:</h2>
           <Button 
-            text={"Ascending"} 
+            text={"Ascending"}
             event={reverseOrder} 
             style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
           />
           <Button 
-            text={"Descending"} 
+            text={"Descending"}
             event={reverseOrder} 
             style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
           />

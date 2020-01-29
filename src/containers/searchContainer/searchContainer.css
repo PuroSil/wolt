@@ -43,14 +43,6 @@
   font-size: 1.1rem;
 }
 
-.container__search input[type=text] {
-  padding: 0.8rem 2rem 0.8rem 3.5rem;
-  border-radius: 3rem;
-  border: 1px solid #c8c8c8;
-  width: 20rem;
-  margin-bottom: 0.5rem;
-}
-
 .container__search .input__address {
   position: relative;
   margin-bottom: 2rem;
