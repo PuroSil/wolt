@@ -10,9 +10,14 @@ import MenuItem from '../../components/menuItem/menuItem';
 //here to give an idea of the layout
 const Restaurant = (imgUrl) => {
 
-  const scrollIntoCategory = () => {
-  }
-
+  const scrollToId = (target) => {
+    const element = document.getElementById(target);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+    
   return (
     <div className="page page__restaurant" style={{backgroundImage: `url(${imgUrl})`}}>
       <section className="page__restaurant_upper">
@@ -46,17 +51,17 @@ const Restaurant = (imgUrl) => {
           It would include a basic information about the restaurant and the type of food offered and some 
           fluff text to further raise the interest of a potential customer and give a brief overview.
           </h3>
-          <h2 className="page__restaurant_category_title">Category one</h2>
+          <h2 className="page__restaurant_category_title" id="category__one">Category one</h2>
           <MenuItem />
           <MenuItem />
           <MenuItem />
           <MenuItem />
-          <h2 className="page__restaurant_category_title">Category two</h2>
+          <h2 className="page__restaurant_category_title" id="category__two">Category two</h2>
           <MenuItem />
           <MenuItem />
           <MenuItem />
           <MenuItem />
-          <h2 className="page__restaurant_category_title">Category three</h2>
+          <h2 className="page__restaurant_category_title" id="category__three">Category three</h2>
           <MenuItem />
           <MenuItem />
           <MenuItem />
@@ -74,9 +79,9 @@ const Restaurant = (imgUrl) => {
             </div>
             <Button text={"ORDER"}/>
             <ul>
-              <li onClick={scrollIntoCategory}>Category one</li>
-              <li onClick={scrollIntoCategory}>Category two</li>
-              <li onClick={scrollIntoCategory}>Category three</li>
+              <li onClick={() => scrollToId("category__one")}>Category one</li>
+              <li onClick={() => scrollToId("category__two")}>Category two</li>
+              <li onClick={() => scrollToId("category__three")}>Category three</li>
             </ul>
         </section>
       </section>
