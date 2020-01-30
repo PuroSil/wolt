@@ -1,7 +1,8 @@
 1. Create geolocation based distance and price calculator for the back-end
-2. Create page-scroll logic (React way, avoid vanilla) to the restaurant placeholder page
-3. Audit the UI
-4. Clean the SASS files (too much redundancy)
-5. Create a clear readme
-6. Comment the code better
-7. Create more sorting options for the front (bonus)
+2. Audit the UI
+3. Clean the SASS files (too much redundancy)
+4. Create a clear readme
+5. Comment the code better
+6. Create more sorting options for the front (bonus)
+7. Do a code review and cleanup
+8. Pull data from database to restaurant page (bonus)
