@@ -6,7 +6,7 @@ import lodash from 'lodash';
 // for state management and is lightweight, no Redux is needed for this
 export const RestaurantContext = createContext();
 
-const RestaurantContextProvider = ({ content }) => {
+const RestaurantContextProvider = props => {
   const [restaurantsList, setRestaurantsList] = useState([]);
   const restaurantProvider = useMemo(() => ({ restaurantsList, setRestaurantsList }), [restaurantsList, setRestaurantsList]);
 
@@ -35,7 +35,7 @@ const RestaurantContextProvider = ({ content }) => {
 
   return (
     <RestaurantContext.Provider value={restaurantProvider}>
-      {content}
+      {props.children}
     </RestaurantContext.Provider>
   );
 };

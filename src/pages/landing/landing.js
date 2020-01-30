@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NearbyContext } from '../../context/nearbyContext';
 import { LocationContext } from '../../context/locationContext';
@@ -13,7 +13,6 @@ import './landing.css';
 const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
-
   
   const switchClose = () => {
     setClose(!close);

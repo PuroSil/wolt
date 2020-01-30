@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { RestaurantContext } from '../../context/restaurantContext';
 import ImageElement from '../../components/image/image';
 import RestaurantContainer from '../../containers/restaurantsContainer/restaurantsContainer';
 import Search from '../../components/search/search';
@@ -8,8 +7,6 @@ import './results.css';
 import '../pages.css';
 
 const Results = () => {
-  const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
-
   return (
     <div className="page page__results">
       <NavLink exact to="/" activeClassName="active">

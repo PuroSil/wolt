@@ -42,9 +42,9 @@ const App = () => {
     <div className="app" onLoad={geoLocation}>
       {pageTransitions.map(({item, props, key}) => (
         <animated.div key={key} style={props}>
-          <LocationContext.Provider value={locationProvider}>
-          <NearbyContextProvider content={
-            <RestaurantContextProvider content={
+          <NearbyContextProvider>
+            <LocationContext.Provider value={locationProvider}>
+            <RestaurantContextProvider>
               <Suspense fallback={<h1>Restaurants loading...</h1>}>
                 <Switch location={item}>
                   <Route path="/" exact component={Landing} />
@@ -52,11 +52,9 @@ const App = () => {
                   <Route path="/restaurant" component={Restaurant} />
                 </Switch>
               </Suspense>
-              }>
             </RestaurantContextProvider>
-          }>
+            </LocationContext.Provider>
           </NearbyContextProvider>
-          </LocationContext.Provider>
         </animated.div>
       ))}
     </div>

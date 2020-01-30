@@ -172,7 +172,7 @@
       bottom: 0;
       left: 0;
 
-      @include default-transition;
+      @include default-transition($time: 0.2s, $type: ease-in);
     }
 
     &:hover {

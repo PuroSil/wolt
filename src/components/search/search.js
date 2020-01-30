@@ -8,7 +8,7 @@ import Form from '../form/form';
 const Search = () => {
   const [searchValue, setSearchValue] = useState('');
   const [inputValue, setInputValue] = useState('');
-  const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
+  const { setRestaurantsList } = useContext(RestaurantContext);
 
   //Allow the search for restaurants with given parameters
   const onSubmit = async (e) => {

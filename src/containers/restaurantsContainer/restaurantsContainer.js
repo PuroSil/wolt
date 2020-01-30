@@ -11,8 +11,9 @@ import './restaurantsContainer.css';
 // and seems somewhat future proof until I get Google Maps API to work
 import { getDistance } from 'geolib';
 // BlurHash could be used to blur out restaurant images in order to e.g. focus more on certain others
-// Leaving the dependency for now
-import { BlurhashCanvas } from "react-blurhash";
+// or on slow connections it could speed up page loading while waiting for full pictures to load as the blurhash images are compact.
+// Leaving the dependency for now for future use
+//import { BlurhashCanvas } from "react-blurhash";
 const { price } = require('../../utils/price');
 
 const RestaurantContainer = () => {

@@ -4,13 +4,13 @@ import React, { useState, useMemo, createContext } from 'react';
 // for state management and is lightweight, no Redux is needed for this
 export const NearbyContext = createContext();
 
-const NearbyContextProvider = ({ content }) => {
-  const [close, setClose] = useState();
+const NearbyContextProvider = props => {
+  const [close, setClose] = useState(false);
   const nearbyProvider = useMemo(() => ({ close, setClose }), [close, setClose]);
   
   return (
     <NearbyContext.Provider value={nearbyProvider}>
-      {content}
+      {props.children}
     </NearbyContext.Provider>
   );
 };
