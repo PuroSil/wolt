@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 import NearbyContextProvider from './context/nearbyContext';
 
 ReactDOM.render(
-  <HashRouter>
+  <HashRouter basename="/">
     <NearbyContextProvider>
       <App />
     </NearbyContextProvider>
