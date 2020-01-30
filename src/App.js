@@ -5,7 +5,6 @@ import { LocationContext } from './context/locationContext';
 import Landing from './pages/landing/landing';
 import Restaurant from './pages/restaurant/restaurant';
 import RestaurantContextProvider from './context/restaurantContext';
-import NearbyContextProvider from './context/nearbyContext';
 import './app.css';
 // The restaurant listing loads a large amount of images and data which might slow
 // the rendering of pages down which why lazy loading to ease things a bit 
@@ -42,7 +41,6 @@ const App = () => {
     <div className="app" onLoad={geoLocation}>
       {pageTransitions.map(({item, props, key}) => (
         <animated.div key={key} style={props}>
-          <NearbyContextProvider>
             <LocationContext.Provider value={locationProvider}>
             <RestaurantContextProvider>
               <Suspense fallback={<h1>Restaurants loading...</h1>}>
@@ -54,7 +52,6 @@ const App = () => {
               </Suspense>
             </RestaurantContextProvider>
             </LocationContext.Provider>
-          </NearbyContextProvider>
         </animated.div>
       ))}
     </div>
