@@ -21,7 +21,7 @@ const distance = (lat1, lon1, lat2, lon2) => {
 // try to make it work with dao
 const getRestaurantsByName = async (req, res, next) => {
   try {
-    if(req.query.name.length > 0) {
+    if (req.query.name.length > 0 && req.query.userLat !== undefined || req.query.userLon !== undefined) {
       const restaurants = await Restaurant.find({
         $or:
           [{name:{'$regex' : req.query.name, '$options' : 'i'}},
@@ -32,6 +32,12 @@ const getRestaurantsByName = async (req, res, next) => {
       // Due to there only being 50 restaurants in the database, it is hard to come up with a distance
       // that would yield results to most searches, but that would be solved by having a proper amount
       // of restaurants. Setting it to 3 km (3000 meters) for now.
+
+      console.log("user lat", req.query.userLat)
+      console.log("userLon", req.query.userLong)
+      console.log("res 1", restaurants[0].location[1])
+      console.log("rest 2", restaurants[0].location[0])
+
       return res.json(
         restaurants.filter(
           restaurant => distance(req.query.userLat, req.query.userLon, restaurant.location[1], restaurant.location[0]) 
@@ -39,7 +45,13 @@ const getRestaurantsByName = async (req, res, next) => {
         )
       );
     } else {
-      return;
+      const restaurants = await Restaurant.find({
+        $or:
+          [{name:{'$regex' : req.query.name, '$options' : 'i'}},
+          {tags:{'$regex' : req.query.name, '$options' : 'i'}},
+          {description:{'$regex' : req.query.name, '$options' : 'i'}}]
+      });
+      return res.json(restaurants);
     }
   } catch (err) {
     console.log("error", err)

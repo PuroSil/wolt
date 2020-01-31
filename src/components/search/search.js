@@ -15,6 +15,7 @@ const Search = () => {
   //Allow the search for restaurants with given parameters
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(userLocation[0], userLocation[1])
     const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName?name=${searchValue}&userLon=${userLocation[0]}&userLat=${userLocation[1]}`);
     setRestaurantsList(response.data)
     setInputValue('');
