@@ -29,10 +29,13 @@ const getRestaurantsByName = async (req, res, next) => {
           {description:{'$regex' : req.query.name, '$options' : 'i'}}]
       });
 
+      // Due to there only being 50 restaurants in the database, it is hard to come up with a distance
+      // that would yield results to most searches, but that would be solved by having a proper amount
+      // of restaurants. Setting it to 3 km (3000 meters) for now.
       return res.json(
         restaurants.filter(
           restaurant => distance(req.query.userLat, req.query.userLon, restaurant.location[1], restaurant.location[0]) 
-          < 1100
+          < 3000
         )
       );
     } else {
