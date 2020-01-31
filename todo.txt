@@ -6,3 +6,4 @@
 6. Create more sorting options for the front (bonus)
 7. Do a code review and cleanup
 8. Pull data from database to restaurant page (bonus)
+9. Some tests (Jest?)
