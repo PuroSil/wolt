@@ -5,20 +5,16 @@ const {
   daoGetAllRestaurants,
   daoGetRestaurantsByName
 } = require('../daos/restaurantDao');
+const { getDistance } = require('geolib');
 
-module.exports = router;
-
-const addRestaurant = async (req, res, next) => {
-  const { body } = req;
-  try {
-    const sentRestaurant = await daoAddRestaurant(
-      body,
-    );
-    return res.send(sentRestaurant);
-  } catch (err) {
-    return next(res.send({ message: err.toString() 
-    }));
-  };
+// I had problems with Google Maps API, so this function
+// is a placeholder and calculates crow's distance between
+// two points to get nearby restaurants, not ideal, but at least it works
+const distance = (lat1, lon1, lat2, lon2) => {
+  return getDistance(
+    { latitude: lat1, longitude: lon1 },
+    { latitude: lat2, longitude: lon2 }
+  );
 };
 
 // create restaurant search that checks if paramaters included in name (includes() lodash or vanilla)
@@ -32,11 +28,18 @@ const getRestaurantsByName = async (req, res, next) => {
           {tags:{'$regex' : req.query.name, '$options' : 'i'}},
           {description:{'$regex' : req.query.name, '$options' : 'i'}}]
       });
-      return res.json(restaurants);
+
+      return res.json(
+        restaurants.filter(
+          restaurant => distance(req.query.userLat, req.query.userLon, restaurant.location[1], restaurant.location[0]) 
+          < 1100
+        )
+      );
     } else {
       return;
     }
   } catch (err) {
+    console.log("error", err)
     return next(res.send({
       message: err.toString()
     }));
@@ -54,6 +57,21 @@ const getAllRestaurants = async (req, res, next) => {
   };
 };
 
-router.get('/getAllRestaurants', getAllRestaurants);
+const addRestaurant = async (req, res, next) => {
+  const { body } = req;
+  try {
+    const sentRestaurant = await daoAddRestaurant(
+      body,
+    );
+    return res.send(sentRestaurant);
+  } catch (err) {
+    return next(res.send({ message: err.toString() 
+    }));
+  };
+};
+
 router.get('/getRestaurantsByName', getRestaurantsByName);
+router.get('/getAllRestaurants', getAllRestaurants);
 router.post('/addRestaurant', addRestaurant);
+
+module.exports = router;

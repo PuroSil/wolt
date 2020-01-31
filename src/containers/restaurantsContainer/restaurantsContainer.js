@@ -88,7 +88,7 @@ const RestaurantContainer = () => {
         // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
         // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
-          {if(userLocation.length > 0 && close && distance(entry.location[1], entry.location[0], userLocation[1], userLocation[0]) < 2400) {
+          {if(userLocation.length > 0)  {
             return (
               <NavLink exact to="/restaurant" key={entry.name}>
                 <RestaurantBlock

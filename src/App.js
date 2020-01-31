@@ -25,7 +25,7 @@ const App = () => {
   };
 
   const position = (position) => {
-    setUserLocation([...userLocation, position.coords.longitude, position.coords.latitude]);
+    setUserLocation([position.coords.longitude, position.coords.latitude]);
   };
 
   // React Spring animation settings

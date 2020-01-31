@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
+import { RestaurantContext } from '../../context/restaurantContext';
+import { LocationContext } from '../../context/locationContext';
 import axios from 'axios';
 import Button from '../button/button';
-import { RestaurantContext } from '../../context/restaurantContext';
 import Input from '../input/input';
 import Form from '../form/form';
 
@@ -9,11 +10,12 @@ const Search = () => {
   const [searchValue, setSearchValue] = useState('');
   const [inputValue, setInputValue] = useState('');
   const { setRestaurantsList } = useContext(RestaurantContext);
+  const { userLocation } = useContext(LocationContext);
 
   //Allow the search for restaurants with given parameters
   const onSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName?name=${searchValue}`);
+    const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName?name=${searchValue}&userLon=${userLocation[0]}&userLat=${userLocation[1]}`);
     setRestaurantsList(response.data)
     setInputValue('');
   }; 
