@@ -5,7 +5,7 @@ import { SelectedResContext } from '../../context/selectedResContext';
 import Button from '../../components/button/button';
 import './restaurant.css';
 import MenuItem from '../../components/menuItem/menuItem';
-
+import defaultBg from '../../resources/images/bread.jpg';
 //The restaurant page will mostly just be a static page
 //as I lack dynamic data and menus, this is merely a 
 //here to give an idea of the layout
@@ -19,16 +19,19 @@ const Restaurant = () => {
       block: "start",
     });
   };
-    
+  
   return (
     <div className="page page__restaurant">
-      <section className="page__restaurant_upper" style={{backgroundImage: `url(${selectedRes.image})`}}>
+      <section className="page__restaurant_upper" style={
+        {backgroundImage: !selectedRes.image ? `url(${defaultBg})` : 
+        `url(${selectedRes.image})`}
+      }>
         <div className="black__overlay">
           <section className="page__restaurant_upper_content">
             <NavLink exact to="/" activeClassName="active">
               <ImageElement className={"logo"} alt={"Wolt company logo"} src={require("../../resources/images/woltWhite.png")} />
             </NavLink>
-            <h1>{selectedRes.name}</h1>
+            <h1>{!selectedRes.name ? "Restaurant Name" : selectedRes.name}</h1>
             <h2>Delivery hours:</h2>
             <div className="page__restaurant_hours">
               <span>Mon - Fri</span>

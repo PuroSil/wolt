@@ -1,10 +1,9 @@
-2. Audit the UI
-3. Clean the SASS files (too much redundancy)
-4. Create a clear readme
-5. Comment the code better
-6. Create more sorting options for the front (bonus)
-7. Do a code review and cleanup
-8. Make the restaurant page responsive
-9. Some tests (Cypress?) *
-10. Nearby restaurants buttons do not work right now due to logic being moved to back. Fix this. *
-11. Finish designs (API and style) *
+1. Audit the UI
+2. Clean the SASS files (too much redundancy)
+3. Create a clear readme
+4. Comment the code better
+5. Create more sorting options for the front (bonus)
+6. Do a code review and cleanup
+7. Some tests (Cypress?) *
+8. Nearby restaurants buttons do not work right now due to logic being moved to back. Fix this. *
+9. Finish designs (API and style) *
