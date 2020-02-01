@@ -255,9 +255,24 @@
   font-size: 1.2rem;
 }
 
+@media (max-width: 800px) {
+  .page__restaurant_lower_right h3 {
+    font-size: 1rem;
+    color: #fafafa;
+    font-weight: 600;
+  }
+}
+
 .page__restaurant_lower_right img {
   height: 2rem;
   margin-right: 1rem;
+}
+
+@media (max-width: 800px) {
+  .page__restaurant_lower_right img {
+    height: 1.3rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .page__restaurant_lower_right button {
@@ -269,12 +284,13 @@
 }
 
 .page__restaurant_lower_right_shop {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -284,8 +300,38 @@
           flex-direction: row;
 }
 
+@media (max-width: 800px) {
+  .page__restaurant_lower_right_shop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: #009de0;
+    border-radius: 0 0 0 0.5rem;
+    opacity: 0.9;
+  }
+}
+
 .page__restaurant_lower_right_categories {
   margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+  .page__restaurant_lower_right_categories {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .page__restaurant_lower_right_cart h2 {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .page__restaurant_lower_right_cart button {
+    display: none;
+  }
 }
 
 .page__restaurant .logo {

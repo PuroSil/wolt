@@ -82,20 +82,22 @@ const Restaurant = () => {
         <section className="page__restaurant_lower_right">
           <h2>Open Today:</h2>
           <div className="page__restaurant_hours">
-              <span>10:30 - 18:00</span>
-            </div>
+            <span>10:30 - 18:00</span>
+          </div>
+          <section className="page__restaurant_lower_right_cart">
             <h2>Shopping Cart:</h2>
             <div className="page__restaurant_lower_right_shop">
               <ImageElement alt={"Shopping cart icon"} src={require("../../resources/images/smart-cart.png")} />
               <h3>0 ITEMS</h3>
             </div>
             <Button text={"ORDER"}/>
-            <h2 className="page__restaurant_lower_right_categories">Menu categories:</h2>
-            <ul>
-              <li onClick={() => scrollToId("category__one")}>Category One Link</li>
-              <li onClick={() => scrollToId("category__two")}>Category Two Link</li>
-              <li onClick={() => scrollToId("category__three")}>Category Three Link</li>
-            </ul>
+          </section>
+          <h2 className="page__restaurant_lower_right_categories">Menu categories:</h2>
+          <ul>
+            <li onClick={() => scrollToId("category__one")}>Category One Link</li>
+            <li onClick={() => scrollToId("category__two")}>Category Two Link</li>
+            <li onClick={() => scrollToId("category__three")}>Category Three Link</li>
+          </ul>
         </section>
       </section>
     </div>

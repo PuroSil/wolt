@@ -157,11 +157,22 @@
       h3 {
         font-weight: 400;
         font-size: 1.2rem;
+
+        @include breakpoint-small {
+          font-size: 1rem;
+          color: $pure-white;
+          font-weight: 600;
+        }
       }
 
       img {
         height: 2rem;
         margin-right: 1rem;
+
+        @include breakpoint-small {
+          height: 1.3rem;
+          margin-right: 0.5rem;
+        }
       }
 
       button {
@@ -173,11 +184,41 @@
       }
 
       &_shop {
-        @include default-flex($direction: row, $align: center);
+        cursor: pointer;
+
+        @include default-flex($direction: row, $justify: flex-start);
+
+        @include breakpoint-small {
+          position: fixed;
+          top: 0;
+          right: 0;
+          padding: 1rem;
+          background-color: $theme-cyan;
+          border-radius: 0 0 0 0.5rem;
+          opacity: 0.9;
+        }
       }
 
       &_categories {
         margin-top: 2rem;
+
+        @include breakpoint-small {
+          margin-top: 0;
+        }
+      }
+
+      &_cart {
+        h2 {
+          @include breakpoint-small {
+            display: none;
+          }
+        }
+
+        button {
+          @include breakpoint-small {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -192,9 +233,6 @@
 
   ul {
     list-style: none;
-
-    @include breakpoint-small {
-    }
   }
 
   li {
@@ -227,5 +265,4 @@
       width: 100%;
     }
   }
-
 }
