@@ -20,9 +20,9 @@ const Landing = () => {
           <Form className={"search__form"} content={
             <>
               <ImageElement alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
-              <p>Where do you want it delivered?</p>
+              <label for="input__landing">Where do you want it delivered?</label>
               {/* Since the database only has 50 restaurants from Helsinki, this has no unique API yet to check for cities */}
-              <Input type={"text"} placeholder={"Type your address..."} />
+              <Input type={"text"} name={"input__landing"} placeholder={"Type your address..."} />
               <NavLink exact to="/results">
                 <Button aria-label="Navigation link" text={"SEARCH FOR RESTAURANTS"} />
               </NavLink>

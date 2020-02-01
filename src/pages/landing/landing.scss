@@ -2,7 +2,7 @@
 @import '../../globals/mixins';
 
 .page__landing {
-  background-image: url("../../resources/images/donutsBlue.jpg");
+  background-image: url("../../resources/images/donutsBlueS.jpg");
   background-size: cover;
   background-position: right center;
 
@@ -17,20 +17,18 @@
 
   form {
     position: relative;
-    margin-bottom: 4rem;
+    @include default-flex;
 
-    @include breakpoint-small {
-      @include default-flex;
-    }
-
-    p {
-      padding-bottom: 0.5rem;
+    label {
+      padding-bottom: 1rem;
+      width: 100%;
+      font-size: 1.1rem;
     }
 
     img {
       position: absolute;
       left: 1rem;
-      top: 2.6rem;
+      top: 3rem;
       height: 1.4rem;
     }
   }

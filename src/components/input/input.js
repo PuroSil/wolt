@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-const Input = ({ required, type, placeholder, event, value, change, className }) => {
+const Input = ({ required, type, placeholder, event, value, change, className, name }) => {
   return (
     <input 
       className={className}
@@ -12,6 +12,7 @@ const Input = ({ required, type, placeholder, event, value, change, className })
       value={value}
       onChange={change}
       autoFocus
+      id={name}
     />
   );
 };
