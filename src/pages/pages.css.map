@@ -3,7 +3,7 @@
     "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,KAAK;ECYlB,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EAHkC,MAAM;EAInD,cAAc,EAJmD,MAAM;CDRvE",
     "sources": [
         "pages.scss",
-        "../globals/mixins.scss"
+        "../globals/_mixins.scss"
     ],
     "names": [],
     "file": "pages.css"

@@ -3,8 +3,8 @@
     "mappings": "ACAA;;;EAGE;ADAF,AAAA,kBAAkB,CAAE;EAClB,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,GAAG;EEUjB,OAAO,EAAE,IAAI;EACb,eAAe,EAFc,MAAM;EAGnC,WAAW,EFVoB,UAAU;EEWzC,cAAc,EAJmD,MAAM;CFgBvE;;AA3BD,AAME,kBANgB,CAMhB,OAAO,CAAC;EACN,KAAK,EAAE,KAAK;EACZ,MAAM,ECCM,MAAM,CDDK,CAAC;CACzB;;AATH,AAWE,kBAXgB,CAWhB,KAAK,CAAC;EACJ,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,YAAY;CACxB;;AAdH,AAgBE,kBAhBgB,CAgBhB,EAAE,CAAC;EACD,WAAW,EAAE,mBAAmB;EAChC,WAAW,EAAE,GAAG;EAChB,SAAS,ECPQ,MAAM;EDQvB,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,CAAC,CAAC,CAAC,CCNF,IAAI;CDOd;;AAtBH,AAwBE,kBAxBgB,CAwBhB,CAAC,CAAC;EACA,SAAS,EAAE,MAAM;CAClB",
     "sources": [
         "searchContainer.scss",
-        "../../globals/variables.scss",
-        "../../globals/mixins.scss"
+        "../../globals/_variables.scss",
+        "../../globals/_mixins.scss"
     ],
     "names": [],
     "file": "searchContainer.css"

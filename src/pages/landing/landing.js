@@ -14,8 +14,8 @@ const Landing = () => {
   const { close, setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
   
-  const switchClose = () => {
-    setClose(!close);
+  const setCloseStatus = () => {
+    setClose(true);
   };
 
   return (
@@ -38,7 +38,7 @@ const Landing = () => {
           <NavLink exact to="/results" 
             style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
           >
-            <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} event={switchClose} />
+            <Button aria-label="Navigation link" text={"SEE NEARBY RESTAURANTS"} event={setCloseStatus} />
           </NavLink>
         </>
       }/>

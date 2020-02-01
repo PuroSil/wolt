@@ -39,15 +39,10 @@ const getRestaurantsByName = async (req, res, next) => {
         )
       );
     } else {
-      const restaurants = await Restaurant.find({
-        $or:
-          [{name:{'$regex' : req.query.name, '$options' : 'i'}},
-          {tags:{'$regex' : req.query.name, '$options' : 'i'}},
-          {description:{'$regex' : req.query.name, '$options' : 'i'}}]
-      });
       return res.json(restaurants);
     }
   } catch (err) {
+    console.log("error", err)
     return next(res.send({
       message: err.toString()
     }));

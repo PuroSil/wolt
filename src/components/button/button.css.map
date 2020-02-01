@@ -3,8 +3,8 @@
     "mappings": "ACAA;;;EAGE;ADAF,AAAA,OAAO,CAAC;EACN,OAAO,ECQO,MAAM,CAIX,IAAI;EDXb,MAAM,EAAE,OAAO;EACf,aAAa,ECYF,IAAI;EDXf,KAAK,ECAM,OAAkB;EDC7B,SAAS,ECKA,IAAI;EDJb,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,KAAK;EEmBjB,UAAU,EADoC,KAAK,CAAjB,GAAG,CAAuB,WAAW;CFCvE;;AAfE,AAAD,gBAAU,CAAC;EACT,gBAAgB,ECVP,OAAc;EDWvB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;CAOjB;;AAVA,AAKC,gBALQ,AAKP,MAAM,CAAC;EACN,gBAAgB,ECdT,OAAkB;EDezB,KAAK,ECdI,OAAe;EDexB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,OAAkB;CAC3C;;AArBL,AAwBE,OAxBK,AAwBJ,MAAM,CAAC;EACN,OAAO,EAAE,IAAI;CACd",
     "sources": [
         "button.scss",
-        "../../globals/variables.scss",
-        "../../globals/mixins.scss"
+        "../../globals/_variables.scss",
+        "../../globals/_mixins.scss"
     ],
     "names": [],
     "file": "button.css"

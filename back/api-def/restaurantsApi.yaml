@@ -1,0 +1,191 @@
+openapi: 3.0.1
+info:
+  title: Wolt imitation application
+  description: Application for finding and listing restaurants
+  contact:
+    email: petra.silavuori@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.5.0
+paths:
+  /getRestaurantsByName:
+    get:
+      summary: Get all restaurants from the database that match query parameters
+      description: |
+        This API endpoint will deliver the data from all the restaurant objects in the database based on query parameters.
+      operationId: getRestaurantsByName
+      parameters:
+        - name: searchValue
+          in: query
+          description: pass search value to pass with query
+          required: false
+          schema:
+            type: string
+            example: "qwerty"
+        - name: userLat
+          in: query
+          description: pass user latitude to pass with query
+          required: false
+          schema:
+            type: number
+            example: 24.941325187683105
+        - name: userLon
+          in: query
+          description: pass user longtitude to pass with query
+          required: false
+          schema:
+            type: number
+            example: 60.169938852212965
+      responses:
+        200:
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Restaurant"
+        400:
+          description: Bad input parameter
+          content: {}
+  /getAllRestaurants:
+    get:
+      summary: Get all restaurants from the database
+      description: |
+        This API endpoint will deliver the data from all the restaurant objects in the database.
+      operationId: getAllRestaurants
+      responses:
+        200:
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Restaurant"
+        400:
+          description: Bad input parameter
+          content: {}
+  /addRestaurant:
+    post:
+      summary: adds a restaurant
+      description: Adds a restaurant to the database
+      operationId: addRestaurant
+      requestBody:
+        $ref: "#/components/requestBodies/Restaurant"
+      responses:
+        201:
+          description: User successfully added
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Restaurant"
+        400:
+          description: bad input parameter
+          content: {}
+components:
+  schemas:
+    Restaurant:
+      required:
+        - blurhash
+        - city
+        - currency
+        - deliveryPrice
+        - description
+        - image
+        - location
+        - name
+        - online
+        - tags
+        - _id
+      type: object
+      properties:
+        blurhash:
+          type: string
+          example: blurhash
+        city:
+          type: string
+          example: city
+        currency:
+          type: string
+          example: currency
+        deliveryPrice:
+          type: number
+          example: 0
+        description:
+          type: string
+          example: description
+        image:
+          type: string
+          example: image
+        location:
+          type: array
+          items:
+            type: number
+            example: 24.941325187683105, 60.169938852212965
+        name:
+          type: string
+          example: name
+        online:
+          type: boolean
+          example: false
+        tags:
+          type: array
+          items: 
+            type: string
+            example: tag, tag
+  requestBodies:
+    Restaurant:
+      description: Adds a restaurant to the database
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - blurhash
+              - city
+              - currency
+              - deliveryPrice
+              - description
+              - image
+              - location
+              - name
+              - online
+              - tags
+            properties:
+              blurhash:
+                type: string
+                example: blurhash
+              city:
+                type: string
+                example: city
+              currency:
+                type: string
+                example: currency
+              deliveryPrice:
+                type: number
+                example: 0
+              description:
+                type: string
+                example: description
+              image:
+                type: string
+                example: image
+              location:
+                type: array
+                items:
+                  type: number
+                  example: 24.941325187683105, 60.169938852212965
+              name:
+                type: string
+                example: name
+              online:
+                type: boolean
+                example: false
+              tags:
+                type: array
+                items:
+                  type: string
+                  example: tag, tag
