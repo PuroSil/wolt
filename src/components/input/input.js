@@ -11,6 +11,7 @@ const Input = ({ required, type, placeholder, event, value, change, className })
       onInput={event}
       value={value}
       onChange={change}
+      autoFocus
     />
   );
 };
