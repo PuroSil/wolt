@@ -1,0 +1,113 @@
+/*
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+*/
+.footer__wrapper {
+  width: 70%;
+  height: auto;
+  padding: 2rem 0 4rem 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 800px) {
+  .footer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.footer__left, .footer__right {
+  width: 100%;
+  height: auto;
+  padding: 1rem 2rem 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 800px) {
+  .footer__left, .footer__right {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    padding: 1rem 0;
+  }
+}
+
+.footer__left h1, .footer__left p, .footer__right h1, .footer__right p {
+  width: 20rem;
+}
+
+@media (max-width: 800px) {
+  .footer__left h1, .footer__left p, .footer__right h1, .footer__right p {
+    width: 100%;
+  }
+}
+
+.footer__left p, .footer__right p {
+  margin-top: 1rem;
+}
+
+.footer__right {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.footer__right_links {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 800px) {
+  .footer__right_links {
+    width: 100%;
+  }
+}
+
+.footer__contact {
+  height: 2rem;
+  margin: 1rem 1.5rem 2rem 0;
+  cursor: pointer;
+}
+/*# sourceMappingURL=footer.css.map */

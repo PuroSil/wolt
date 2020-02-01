@@ -9,6 +9,7 @@ import Form from '../../components/form/form';
 import Input from '../../components/input/input';
 import '../pages.css';
 import './landing.css';
+import Footer from '../../components/footer/footer';
 
 const Landing = () => {
   const { setClose } = useContext(NearbyContext);
@@ -19,6 +20,7 @@ const Landing = () => {
   };
 
   return (
+    <>
     <div className="page page__landing">
       <SearchContainer content={
         <>
@@ -26,7 +28,7 @@ const Landing = () => {
           <h3>How about some doughnuts?</h3>
             <Form className={"search__form"} content={
               <>
-                <ImageElement className={""} alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
+                <ImageElement alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
                 <p>Where do you want it delivered?</p>
                 <Input type={"text"} placeholder={"Type your address..."} />
                 <NavLink exact to="/results">
@@ -43,6 +45,18 @@ const Landing = () => {
         </>
       }/>
     </div>
+    <Footer 
+      titleLeft={"About"} 
+      textLeft={"This little project was made to practice the full spectrum of my skills in the span of a week. Design, front and back. It imitates the wonderful Wolt application as creating those functionalities is a good and fun way of honing my skills. Besides, in a world full of NDA's, you need to have something to show!"} 
+      titleRight={"Contact me"} 
+      linkGit={
+        <ImageElement className={"footer__contact"} alt={"Github logo"} src={require("../../resources/images/github.png")} />
+      }
+      linkLink={
+        <ImageElement className={"footer__contact"} alt={"Linkedin logo"} src={require("../../resources/images/linkedin.png")} />
+      }
+    />
+    </>
   );
 };
 

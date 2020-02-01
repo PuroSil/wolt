@@ -1,0 +1,60 @@
+@import '../../globals/variables';
+@import '../../globals/mixins';
+
+.footer {
+  &__wrapper {
+    width: 70%;
+    height: auto;
+    padding: 2rem 0 4rem 0;
+    margin: auto;
+
+    @include default-flex($direction: row, $align: flex-start);
+    @include breakpoint-small {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left, &__right {
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem 0 0;
+    
+    @include default-flex($justify: flex-start, $align: flex-start);
+    @include breakpoint-small {
+      align-items: center !important;
+      padding: 1rem 0;
+    }
+
+    h1, p {
+      width: 20rem;
+
+      @include breakpoint-small {
+        width: 100%;
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  &__right {
+    align-items: flex-start;
+  
+    &_links {
+      width: 20rem;
+
+      @include default-flex($direction: row, $align: flex-start, $justify: flex-start);
+      @include breakpoint-small {
+        width: 100%;
+      }
+    }
+  } 
+
+  &__contact {
+    height: 2rem;
+    margin: 1rem 1.5rem 2rem 0;
+    cursor: pointer;
+  }
+}
