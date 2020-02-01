@@ -23,7 +23,7 @@ const Landing = () => {
       <SearchContainer content={
         <>
           <ImageElement className={"logo"} alt={"Wolt company logo"} src={require("../../resources/images/woltLogo.png")} />
-          <h3>The ecological way of filling your culinary desires</h3>
+          <h3>How about some doughnuts?</h3>
             <Form className={"search__form"} content={
               <>
                 <ImageElement className={""} alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />

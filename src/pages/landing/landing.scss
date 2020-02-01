@@ -2,14 +2,26 @@
 @import '../../globals/mixins';
 
 .page__landing {
-  background-image: url("../../resources/images/bowl.jpg");
+  background-image: url("../../resources/images/donutsBlue.jpg");
   background-size: cover;
+  background-position: right center;
 
   @include default-flex($align: flex-start);
+  @include breakpoint-medium {
+    background-position: unset;
+  }
+  @include breakpoint-small {
+    align-items: center;
+  }
+
 
   form {
     position: relative;
     margin-bottom: 4rem;
+
+    @include breakpoint-small {
+      @include default-flex;
+    }
 
     p {
       padding-bottom: 0.5rem;
@@ -20,6 +32,12 @@
       left: 1rem;
       top: 2.6rem;
       height: 1.4rem;
+    }
+  }
+
+  * {
+    @include breakpoint-small {
+      max-width: 16rem;
     }
   }
 }

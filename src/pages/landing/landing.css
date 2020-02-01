@@ -3,8 +3,9 @@
   font-family: 'Source Sans Pro', sans-serif;
 */
 .page__landing {
-  background-image: url("../../resources/images/bowl.jpg");
+  background-image: url("../../resources/images/donutsBlue.jpg");
   background-size: cover;
+  background-position: right center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,9 +21,41 @@
           flex-direction: column;
 }
 
+@media (max-width: 1250px) {
+  .page__landing {
+    background-position: unset;
+  }
+}
+
+@media (max-width: 800px) {
+  .page__landing {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .page__landing form {
   position: relative;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 800px) {
+  .page__landing form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .page__landing form p {
@@ -34,5 +67,11 @@
   left: 1rem;
   top: 2.6rem;
   height: 1.4rem;
+}
+
+@media (max-width: 800px) {
+  .page__landing * {
+    max-width: 16rem;
+  }
 }
 /*# sourceMappingURL=landing.css.map */

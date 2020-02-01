@@ -2,10 +2,14 @@
 @import '../../globals/mixins';
 
 .container__search  {
-  width: 20rem;
+  width: 25rem;
   margin-left: 15%;
 
   @include default-flex($align: flex-start);
+  @include breakpoint-small {
+    width: 80%;
+    margin-left: 0;  
+  }
 
   .button {
     width: 20rem;
@@ -15,14 +19,20 @@
   .logo {
     width: 21rem;
     transform: rotate(7deg);
+
+    @include breakpoint-small {
+      width: 16rem;
+    }
   }
 
   h3 {
-    font-family: 'Dosis', sans-serif;
     font-weight: 500;
-    font-size: $size-one-plus-half;
+    font-size: $size-three;
     text-align: left;
-    margin: 0 0 $size-three;
+    
+    @include breakpoint-small {
+      font-size: $size-two-plus-half;
+    }
   }
 
   p {

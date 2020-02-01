@@ -3,7 +3,7 @@
   font-family: 'Source Sans Pro', sans-serif;
 */
 .container__search {
-  width: 20rem;
+  width: 25rem;
   margin-left: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +20,13 @@
           flex-direction: column;
 }
 
+@media (max-width: 800px) {
+  .container__search {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+
 .container__search .button {
   width: 20rem;
   margin: 0.5rem 0;
@@ -31,12 +38,22 @@
           transform: rotate(7deg);
 }
 
+@media (max-width: 800px) {
+  .container__search .logo {
+    width: 16rem;
+  }
+}
+
 .container__search h3 {
-  font-family: 'Dosis', sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-align: left;
-  margin: 0 0 3rem;
+}
+
+@media (max-width: 800px) {
+  .container__search h3 {
+    font-size: 2.5rem;
+  }
 }
 
 .container__search p {
