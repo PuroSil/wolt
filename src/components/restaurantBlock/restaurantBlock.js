@@ -1,9 +1,9 @@
 import React from 'react';
 import './restaurantBlock.css';
 
-const RestaurantBlock = ({ name, city, description, tags, price, imgUrl }) => {
+const RestaurantBlock = ({ name, city, description, tags, price, imgUrl, event }) => {
   return (
-    <div className="block__restaurant">
+    <div className="block__restaurant" onClick={event}>
       <section className="block__restaurant_image" style={{backgroundImage: `url(${imgUrl})`}} /> 
       <section className="block__restaurant_text">
         <section className="block__restaurant_text_upper">

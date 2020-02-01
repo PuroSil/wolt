@@ -4,7 +4,6 @@ import { config, useTransition, animated } from 'react-spring';
 import { LocationContext } from './context/locationContext';
 import Landing from './pages/landing/landing';
 import Restaurant from './pages/restaurant/restaurant';
-import RestaurantContextProvider from './context/restaurantContext';
 import './app.css';
 // The restaurant listing loads a large amount of images and data which might slow
 // the rendering of pages down which why lazy loading to ease things a bit 
@@ -29,15 +28,13 @@ const App = () => {
       {pageTransitions.map(({item, props, key}) => (
         <animated.div key={key} style={props}>
             <LocationContext.Provider value={locationProvider}>
-            <RestaurantContextProvider>
-              <Suspense fallback={<h1>Restaurants loading...</h1>}>
-                <Switch location={item}>
-                  <Route path="/" exact component={Landing} />
-                  <Route path="/results" component={Results} />
-                  <Route path="/restaurant" component={Restaurant} />
-                </Switch>
-              </Suspense>
-            </RestaurantContextProvider>
+                <Suspense fallback={<h1>Restaurants loading...</h1>}>
+                  <Switch location={item}>
+                    <Route path="/" exact component={Landing} />
+                    <Route path="/results" component={Results} />
+                    <Route path="/restaurant" component={Restaurant} />
+                  </Switch>
+                </Suspense>
             </LocationContext.Provider>
         </animated.div>
       ))}

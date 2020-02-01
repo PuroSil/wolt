@@ -4,7 +4,6 @@
 5. Comment the code better
 6. Create more sorting options for the front (bonus)
 7. Do a code review and cleanup
-8. Pull data from database to restaurant page. Name and image is enough.
-9. Some tests (Cypress?)
-10. Nearby restaurants buttons do not work right now due to logic being moved to back. Fix this.
-11. Finish designs (API and style)
+9. Some tests (Cypress?) *
+10. Nearby restaurants buttons do not work right now due to logic being moved to back. Fix this. *
+11. Finish designs (API and style) *

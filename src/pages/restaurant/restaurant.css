@@ -34,10 +34,10 @@
 }
 
 .page__restaurant_upper {
-  background-image: url("../../resources/images/aerial-view-of-loaf-breads-1630923.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 80vh;
   width: 100%;
   margin-bottom: auto;

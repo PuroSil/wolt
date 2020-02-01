@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { RestaurantContext } from '../../context/restaurantContext';
 import { LocationContext } from '../../context/locationContext';
 import { NearbyContext } from '../../context/nearbyContext';
+import { SelectedResContext } from '../../context/selectedResContext';
 import Button from '../../components/button/button';
 import RestaurantBlock from '../../components/restaurantBlock/restaurantBlock';
 import SaleBlock from '../../components/saleBlock/saleBlock';
@@ -15,11 +16,13 @@ import { getDistance } from 'geolib';
 // Leaving the dependency for now for future use
 //import { BlurhashCanvas } from "react-blurhash";
 const { price } = require('../../utils/price');
+const { reverseOrder } = require('../../utils/reverseOrder');
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
   const { close, setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
+  const { setSelectedRes } = useContext(SelectedResContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
   const [saleItem, setSaleItem] = useState(null);
 
@@ -27,14 +30,13 @@ const RestaurantContainer = () => {
     setSaleItem(restaurantsList[Math.floor(Math.random() * restaurantsList.length)]);
   }, [restaurantsList]);
 
-  const reverseOrder = () => {
-    setOrder(!order);
-    setRestaurantsList([...restaurantsList.reverse()]);
-  };
-
   const switchClose = () => {
     setClose(!close);
   };
+
+  const setSelectedRestaurant = (name, image, tags) => {
+    setSelectedRes({name: name, image: image, tags: [tags]})
+  }
 
   // I had problems with Google Maps API, so this function
   // is a placeholder and calculates crow's distance between
@@ -64,12 +66,17 @@ const RestaurantContainer = () => {
           <h2>Order by name:</h2>
           <Button 
             text={"Ascending"}
-            event={reverseOrder} 
+            event={
+              () => reverseOrder(
+                setOrder, setRestaurantsList, order, restaurantsList
+              )} 
             style={{ pointerEvents: order ? "all" : "none", opacity: order ? "1" : "0.5" }} 
           />
           <Button 
             text={"Descending"}
-            event={reverseOrder} 
+            event={() => reverseOrder(
+              setOrder, setRestaurantsList, order, restaurantsList
+            )} 
             style={{ pointerEvents: order ? "none" : "all", opacity: order ? "0.5" : "1" }} 
           />
         </div>
@@ -98,7 +105,8 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry, userLocation, distance, close)} 
+                  price={price(entry, userLocation, distance, close)}
+                  event={() => setSelectedRestaurant(entry.name, entry.image, entry.tags)}
                 />
               </NavLink>
             )
@@ -112,7 +120,8 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry, userLocation, distance, close)} 
+                  price={price(entry, userLocation, distance, close)}
+                  event={() => setSelectedRestaurant(entry.name, entry.image, entry.tags)}
                 />
               </NavLink>
             )

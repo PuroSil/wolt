@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ImageElement from '../../components/image/image';
 import { NavLink } from 'react-router-dom';
+import { SelectedResContext } from '../../context/selectedResContext';
 import Button from '../../components/button/button';
 import './restaurant.css';
 import MenuItem from '../../components/menuItem/menuItem';
@@ -8,7 +9,8 @@ import MenuItem from '../../components/menuItem/menuItem';
 //The restaurant page will mostly just be a static page
 //as I lack dynamic data and menus, this is merely a 
 //here to give an idea of the layout
-const Restaurant = (imgUrl) => {
+const Restaurant = () => {
+  const { selectedRes } = useContext(SelectedResContext);
 
   const scrollToId = (target) => {
     const element = document.getElementById(target);
@@ -19,14 +21,14 @@ const Restaurant = (imgUrl) => {
   };
     
   return (
-    <div className="page page__restaurant" style={{backgroundImage: `url(${imgUrl})`}}>
-      <section className="page__restaurant_upper">
+    <div className="page page__restaurant">
+      <section className="page__restaurant_upper" style={{backgroundImage: `url(${selectedRes.image})`}}>
         <div className="black__overlay">
           <section className="page__restaurant_upper_content">
             <NavLink exact to="/" activeClassName="active">
               <ImageElement className={"logo"} alt={"Wolt company logo"} src={require("../../resources/images/woltWhite.png")} />
             </NavLink>
-            <h1>Restaurant XXX</h1>
+            <h1>{selectedRes.name}</h1>
             <h2>Delivery hours:</h2>
             <div className="page__restaurant_hours">
               <span>Mon - Fri</span>
@@ -38,8 +40,15 @@ const Restaurant = (imgUrl) => {
             </div>
             <h3>Average delivery time today: 22 min</h3>
             <div className="page__restaurant_upper_tags">
-              <h4>tag</h4>
-              <h4>tag</h4>
+              {selectedRes && selectedRes.tags && selectedRes.tags.map((entry) => {
+                return(
+                  entry.map((tag) => {
+                    return(
+                      <h4 key={tag}>{tag}</h4>
+                    );
+                  })
+                );
+              })}
             </div>
           </section>
         </div>

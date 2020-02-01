@@ -11,7 +11,7 @@ import '../pages.css';
 import './landing.css';
 
 const Landing = () => {
-  const { close, setClose } = useContext(NearbyContext);
+  const { setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
   
   const setCloseStatus = () => {
