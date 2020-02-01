@@ -1,8 +1,7 @@
 import React from 'react';
 import './footer.css';
-const { Links } = require('../../utils/links');
 
-const Footer = ({ titleLeft, textLeft, titleRight, linkGit, linkLink, event }) => {
+const Footer = ({ titleLeft, textLeft, titleRight, imgGit, imgLink, linkFirst, linkSecond }) => {
   return (
     <div className="footer__wrapper">
       <section className="footer__left">
@@ -12,8 +11,8 @@ const Footer = ({ titleLeft, textLeft, titleRight, linkGit, linkLink, event }) =
       <section className="footer__right">
         <h1>{titleRight}</h1>
         <div className="footer__right_links">
-          <a name="git" onClick={(e) => Links(e)}>{linkGit}</a>
-          <a name="linkedin" onClick={(e) => Links(e)}>{linkLink}</a>
+          <a href={linkFirst} name="git">{imgGit}</a>
+          <a href={linkSecond} name="linkedin">{imgLink}</a>
         </div>
       </section>
     </div>

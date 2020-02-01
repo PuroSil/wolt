@@ -39,6 +39,7 @@ const getRestaurantsByName = async (req, res, next) => {
         )
       );
     } else {
+      const restaurants = await Restaurant.find({});
       return res.json(restaurants);
     }
   } catch (err) {

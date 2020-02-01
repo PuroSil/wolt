@@ -2,25 +2,22 @@ import React, { useContext, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RestaurantContext } from '../../context/restaurantContext';
 import { LocationContext } from '../../context/locationContext';
-import { NearbyContext } from '../../context/nearbyContext';
 import { SelectedResContext } from '../../context/selectedResContext';
 import Button from '../../components/button/button';
 import RestaurantBlock from '../../components/restaurantBlock/restaurantBlock';
 import SaleBlock from '../../components/saleBlock/saleBlock';
 import './restaurantsContainer.css';
-// There are several libraries for distance calculating, this one had the most support
-// and seems somewhat future proof until I get Google Maps API to work
 import { getDistance } from 'geolib';
 // BlurHash could be used to blur out restaurant images in order to e.g. focus more on certain others
-// or on slow connections it could speed up page loading while waiting for full pictures to load as the blurhash images are compact.
+// or on slow connections it could speed up page loading while waiting for full pictures to load as the blurhash images are compact
 // Leaving the dependency for now for future use
 //import { BlurhashCanvas } from "react-blurhash";
 const { price } = require('../../utils/price');
 const { reverseOrder } = require('../../utils/reverseOrder');
+const { getAllRestaurants } = require('../../utils/getAllRestaurants');
 
 const RestaurantContainer = () => {
   const [order, setOrder] = useState(false);
-  const { close, setClose } = useContext(NearbyContext);
   const { userLocation } = useContext(LocationContext);
   const { setSelectedRes } = useContext(SelectedResContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
@@ -30,17 +27,12 @@ const RestaurantContainer = () => {
     setSaleItem(restaurantsList[Math.floor(Math.random() * restaurantsList.length)]);
   }, [restaurantsList]);
 
-  const switchClose = () => {
-    setClose(!close);
-  };
-
   const setSelectedRestaurant = (name, image, tags) => {
     setSelectedRes({name: name, image: image, tags: [tags]})
   }
 
-  // I had problems with Google Maps API, so this function
-  // is a placeholder and calculates crow's distance between
-  // two points to get nearby restaurants, not ideal, but at least it works
+  // This is a placeholder function that calculates crow's distance between
+  // two points to get nearby restaurants, not ideal, but will do for now
   const distance = (lat1, lon1, lat2, lon2) => {
     return getDistance(
       { latitude: lat1, longitude: lon1 },
@@ -82,20 +74,18 @@ const RestaurantContainer = () => {
           />
         </div>
         <div className="container__restaurants_buttons_right">
-          <h2>Show { close ? "all:" : "nearby:"}</h2>
           <Button
-            text={ close ? "All" : "Nearby"} 
-            event={switchClose} 
-            style={{ pointerEvents: userLocation.length === 0 ? "none" : "all", opacity: userLocation.length === 0 ? "0.5" : "1" }}
+            text={"Show all"}
+            className={"button__all"}
+            event={() => getAllRestaurants(setRestaurantsList)}  
           />
-          </div>
+        </div>
       </section>
       <section className="container__restaurants_section_entries">
         {restaurantsList &&
         restaurantsList.map((entry) =>
-        // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants
+        // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants in the database
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
-        // TODO: Make this less ugly and use https://developers.google.com/maps/documentation/distance-matrix/start
           {if(userLocation.length > 0)  {
             return (
               <NavLink exact to="/restaurant" key={entry.name}>
@@ -106,12 +96,12 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry, userLocation, distance, close)}
+                  price={price(entry, userLocation, distance)}
                   event={() => setSelectedRestaurant(entry.name, entry.image, entry.tags)}
                 />
               </NavLink>
             )
-          } else if (!close) {
+          } else {
             return (
               <NavLink exact to="/restaurant" key={entry.name}>
                 <RestaurantBlock
@@ -121,14 +111,12 @@ const RestaurantContainer = () => {
                   city={entry.city } 
                   description={entry.description} 
                   tags={entry.tags.join(', ')}
-                  price={price(entry, userLocation, distance, close)}
+                  price={price(entry, userLocation, distance)}
                   event={() => setSelectedRestaurant(entry.name, entry.image, entry.tags)}
                 />
               </NavLink>
             )
-          } else {
-            return null;
-          }
+          } 
         })}
       </section>
     </div>

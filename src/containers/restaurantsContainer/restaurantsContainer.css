@@ -66,9 +66,9 @@
 @media (max-width: 1250px) {
   .container__restaurants_buttons {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -97,12 +97,6 @@
   margin: 1rem 0.2rem 0 1rem;
 }
 
-@media (max-width: 1250px) {
-  .container__restaurants_buttons button {
-    font-size: 0.9rem;
-  }
-}
-
 .container__restaurants_buttons h2 {
   display: inline-block;
   font-weight: 400;
@@ -119,5 +113,9 @@
   width: 100%;
   text-decoration: none;
   color: black;
+}
+
+.container__restaurants .button__all {
+  margin-left: 0;
 }
 /*# sourceMappingURL=restaurantsContainer.css.map */

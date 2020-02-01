@@ -13,12 +13,10 @@ const Search = () => {
   const { userLocation } = useContext(LocationContext);
 
   //Allow the search for restaurants with given parameters
-  const onSubmit = async (e) => {
+  const onSubmitSearch = async (e) => {
     e.preventDefault();
-    console.log(userLocation[0], userLocation[1])
     const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName?name=${searchValue}&userLon=${userLocation[0]}&userLat=${userLocation[1]}`);
     setRestaurantsList(response.data)
-    setInputValue('');
   }; 
 
   const onChange = (e) => {
@@ -27,7 +25,7 @@ const Search = () => {
   }
 
   return (
-    <Form onSubmit={onSubmit} className={"search__form"} content={
+    <Form onSubmit={onSubmitSearch} className={"search__form"} content={
       <>
         <Input 
           type={"text"} 
