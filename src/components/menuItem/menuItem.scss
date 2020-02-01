@@ -7,6 +7,10 @@
   margin: 2rem 0;
 
   @include default-flex($direction: row, $justify: space-between);
+  @include breakpoint-small {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
   &_left {
     height: 10rem;
@@ -51,5 +55,10 @@
     height: auto;
     width: 10rem; 
     border-radius: 0.5rem; 
+
+    @include breakpoint-small {
+      width: 100%;
+      margin-top: 1rem;
+    }
   }
 }

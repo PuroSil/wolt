@@ -87,10 +87,11 @@ const Restaurant = () => {
               <h3>0 ITEMS</h3>
             </div>
             <Button text={"ORDER"}/>
+            <h2 className="page__restaurant_lower_right_categories">Menu categories:</h2>
             <ul>
-              <li onClick={() => scrollToId("category__one")}>Category one</li>
-              <li onClick={() => scrollToId("category__two")}>Category two</li>
-              <li onClick={() => scrollToId("category__three")}>Category three</li>
+              <li onClick={() => scrollToId("category__one")}>Category One Link</li>
+              <li onClick={() => scrollToId("category__two")}>Category Two Link</li>
+              <li onClick={() => scrollToId("category__three")}>Category Three Link</li>
             </ul>
         </section>
       </section>

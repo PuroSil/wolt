@@ -21,6 +21,18 @@
           flex-direction: row;
 }
 
+@media (max-width: 800px) {
+  .menu__item {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .menu__item_left {
   height: 10rem;
   position: relative;
@@ -75,5 +87,12 @@
   height: auto;
   width: 10rem;
   border-radius: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .menu__item_right {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 /*# sourceMappingURL=menuItem.css.map */
