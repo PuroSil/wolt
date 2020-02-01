@@ -109,6 +109,8 @@
       top: 0;
       align-self: flex-start;
       padding: 5rem 0 0 5rem;
+      white-space: nowrap;
+
       @include default-flex($align: flex-start);
 
       h2 {

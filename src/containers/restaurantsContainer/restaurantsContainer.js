@@ -56,7 +56,8 @@ const RestaurantContainer = () => {
             name={`${saleItem.name} -25%`} 
             city={saleItem.city} 
             description={saleItem.description}
-            imgUrl={saleItem.image} 
+            imgUrl={saleItem.image}
+            event={() => setSelectedRestaurant(saleItem.name, saleItem.image, saleItem.tags)}
           /> 
         </NavLink>
       : null
