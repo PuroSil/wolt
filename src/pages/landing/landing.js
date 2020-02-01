@@ -21,6 +21,7 @@ const Landing = () => {
             <>
               <ImageElement alt={"Geolocation logo"} src={require("../../resources/images/placeholder.png")} />
               <p>Where do you want it delivered?</p>
+              {/* Since the database only has 50 restaurants from Helsinki, this has no unique API yet to check for cities */}
               <Input type={"text"} placeholder={"Type your address..."} />
               <NavLink exact to="/results">
                 <Button aria-label="Navigation link" text={"SEARCH FOR RESTAURANTS"} />

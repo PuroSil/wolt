@@ -1,6 +1,14 @@
 describe('Base functionality tests', () => {
-  it('focus input', () => {
-    cy.visit('http://localhost:3000/')
+  it('Test API request validity', () => {
+    cy.request('http://localhost:8000/api/getAllRestaurants')
+    .then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body).to.have.length.greaterThan(0)
+    });
+  });
+  
+  it('Base setup tests', () => {
+    cy.visit('http://localhost:3000/');
     cy.get('.search__form')
     cy.get('input')
   });
