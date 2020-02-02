@@ -25,8 +25,8 @@
 .button__default:hover {
   background-color: #fafafa;
   color: #323232;
-  -webkit-box-shadow: 1px 1px 2px #5e5e5e;
-          box-shadow: 1px 1px 2px #5e5e5e;
+  -webkit-box-shadow: 1px 1px 2px #969696;
+          box-shadow: 1px 1px 2px #969696;
 }
 
 .button:focus {

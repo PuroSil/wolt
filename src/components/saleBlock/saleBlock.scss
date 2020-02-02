@@ -4,9 +4,9 @@
 .block__sale {
   width: 100%;
   height: auto;
-  margin: 2rem 0 3rem 0;
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 10px 1px rgb(230, 230, 230);
+  margin: $size-two 0 3rem 0;
+  border-radius: $size-one-half;
+  box-shadow: 1px 1px 10px 1px $pure-grey;
   cursor: pointer;
 
   @include default-transition;
@@ -16,7 +16,7 @@
   }
 
   &:hover {
-    box-shadow: 1px 1px 10px 1px rgb(220, 220, 220);
+    box-shadow: 1px 1px 10px 1px $broken-grey;
   }
 
   &_left {
@@ -24,18 +24,18 @@
     background-position: center;
     width: 60%;
     min-height: 20rem;
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: $size-one-half 0 0 $size-one-half;
 
     @include breakpoint-small {
       width: 100%;
       min-height: 15rem;
-      border-radius: 0.5rem 0.5rem 0 0;
+      border-radius: $size-one-half $size-one-half 0 0;
     }
   }
 
   &_right {
     width: 40%;
-    padding: 2rem;
+    padding: $size-two;
     text-align: left;
     max-height: 20rem;
 
@@ -53,18 +53,18 @@
       color: $theme-cyan;
 
       @include breakpoint-medium {
-        font-size: 1.5rem;
+        font-size: $size-one-plus-half;
       }
     }
 
     h1:first-child {
-      font-size: 2.5rem;
+      font-size: $size-two-plus-half;
       font-weight: 400;
-      margin-bottom: 1rem;
+      margin-bottom: $size-one;
       color: $pure-black;
 
       @include breakpoint-medium {
-        font-size: 2rem;
+        font-size: $size-two;
       }
     }
 
@@ -77,11 +77,11 @@
     }
 
     p {
-      margin: 1rem 0;
+      margin: $size-one 0;
       font-size: 1.2rem;
       
       @include breakpoint-medium {
-        font-size: 1rem;
+        font-size: $size-one;
       }
     }
   }

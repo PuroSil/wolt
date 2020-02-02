@@ -13,7 +13,7 @@
   font-weight: 400;
   font-size: 2.2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #b1b1b1;
+  border-bottom: 1px solid #d2d2d2;
 }
 
 .page__restaurant_hours {
@@ -138,11 +138,9 @@
 }
 
 .page__restaurant_upper_content h3 {
-  font-weight: 400;
   position: absolute;
   bottom: 2rem;
   left: 0;
-  font-size: 1.3rem;
 }
 
 @media (max-width: 800px) {
@@ -181,9 +179,12 @@
   }
 }
 
+.page__restaurant_lower h3 {
+  font-weight: 400;
+}
+
 .page__restaurant_lower_left {
   width: 70%;
-  min-height: 55rem;
   padding: 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +209,6 @@
 }
 
 .page__restaurant_lower_left h3 {
-  font-weight: 400;
   margin: 2rem 0;
 }
 
@@ -248,11 +248,6 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-}
-
-.page__restaurant_lower_right h3 {
-  font-weight: 400;
-  font-size: 1.2rem;
 }
 
 @media (max-width: 800px) {

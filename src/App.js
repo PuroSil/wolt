@@ -7,15 +7,15 @@ import Restaurant from './pages/restaurant/restaurant';
 import './app.css';
 // The restaurant listing loads a large amount of images and data which might slow
 // the rendering of pages down which why lazy loading to ease things a bit 
-const { geoLocation } = require('./utils/geoLocation');
 const Results = lazy(() => import('./pages/results/results'));
+const { geoLocation } = require('./utils/geoLocation');
 
 const App = () => {
   const [userLocation, setUserLocation] = useState([]);
   const locationProvider = useMemo(() => ({ userLocation, setUserLocation }), [userLocation, setUserLocation]);
+  const location = useLocation();
 
   // React Spring animation settings
-  const location = useLocation();
   const pageTransitions = useTransition(location, location => location.pathname, {
     from: { opacity: 0},
     enter: { opacity: 1},

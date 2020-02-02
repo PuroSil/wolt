@@ -9,7 +9,7 @@
   font-size: $size-one;
   font-weight: 600;
   white-space: nowrap;
-  min-width: 10rem;
+  min-width: $size-ten;
 
   @include default-transition;
 
@@ -21,7 +21,7 @@
     &:hover {
       background-color: $pure-white;
       color: $broken-black;
-      box-shadow: 1px 1px 2px rgb(94, 94, 94);
+      box-shadow: 1px 1px 2px $light-grey;
     }
   }
 

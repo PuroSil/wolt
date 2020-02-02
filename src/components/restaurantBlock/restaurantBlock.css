@@ -17,8 +17,8 @@
 .block__restaurant:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
-  -webkit-box-shadow: 1px 1px 10px 1px gainsboro;
-          box-shadow: 1px 1px 10px 1px gainsboro;
+  -webkit-box-shadow: 1px 1px 10px 1px #d2d2d2;
+          box-shadow: 1px 1px 10px 1px #d2d2d2;
 }
 
 .block__restaurant_image {
@@ -56,7 +56,7 @@
 }
 
 .block__restaurant_text_lower div {
-  border-top: 1px solid gainsboro;
+  border-top: 1px solid #e6e6e6;
   color: #646464;
   padding-top: 0.2rem;
   display: -webkit-box;

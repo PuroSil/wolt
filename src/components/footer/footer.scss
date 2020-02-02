@@ -5,7 +5,7 @@
   &__wrapper {
     width: 70%;
     height: auto;
-    padding: 2rem 0 4rem 0;
+    padding: $size-two 0 $size-four 0;
     margin: auto;
 
     @include default-flex($direction: row, $align: flex-start);
@@ -18,12 +18,12 @@
   &__left, &__right {
     width: 100%;
     height: auto;
-    padding: 1rem 2rem 0 0;
+    padding: $size-one $size-two 0 0;
     
     @include default-flex($justify: flex-start, $align: flex-start);
     @include breakpoint-small {
       align-items: center !important;
-      padding: 1rem 0;
+      padding: $size-one 0;
     }
 
     h1, p {
@@ -35,7 +35,7 @@
     }
 
     p {
-      margin-top: 1rem;
+      margin-top: $size-one;
     }
   }
 
@@ -53,8 +53,8 @@
   } 
 
   &__contact {
-    height: 2rem;
-    margin: 1rem 1.5rem 2rem 0;
+    height: $size-two;
+    margin: $size-one $size-one-plus-half $size-two 0;
     cursor: pointer;
   }
 }

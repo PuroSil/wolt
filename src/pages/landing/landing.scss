@@ -20,15 +20,15 @@
     @include default-flex;
 
     label {
-      padding-bottom: 1rem;
+      padding-bottom: $size-one;
       width: 100%;
       font-size: 1.1rem;
     }
 
     img {
       position: absolute;
-      left: 1rem;
-      top: 3rem;
+      left: $size-one;
+      top: $size-three;
       height: 1.4rem;
     }
   }

@@ -2,9 +2,9 @@
 @import '../../globals/mixins';
 
 .menu__item {
-  min-height: 10rem;
+  min-height: $size-ten;
   width: 100%;
-  margin: 2rem 0;
+  margin: $size-two 0;
 
   @include default-flex($direction: row, $justify: space-between);
   @include breakpoint-small {
@@ -13,7 +13,7 @@
   }
 
   &_left {
-    height: 10rem;
+    height: $size-ten;
     position: relative;
 
     @include default-flex($align: flex-start, $justify: flex-start);
@@ -24,7 +24,7 @@
     }
 
     p {
-      margin: 1rem 0;
+      margin: $size-one 0;
       width: 90%;
       color: $broken-black;
     }
@@ -42,8 +42,8 @@
       bottom: 0;
       left: 0;
       font-size: 0.8rem;
-      padding: 0.3rem 0.5rem;
-      min-width: 8rem;
+      padding: 0.3rem $size-one-plus-half;
+      min-width: $size-eight;
     }
   }
 
@@ -51,14 +51,14 @@
     background-image: url("../../resources/images/vege.jpg");
     background-size: cover;
     background-position: center;
-    min-height: 10rem;
+    min-height: $size-ten;
     height: auto;
-    width: 10rem; 
-    border-radius: 0.5rem; 
+    width: $size-ten; 
+    border-radius: $size-one-plus-half; 
 
     @include breakpoint-small {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: $size-one;
     }
   }
 }

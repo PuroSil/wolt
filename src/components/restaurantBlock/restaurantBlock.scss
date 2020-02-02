@@ -5,7 +5,7 @@
   width: 100%;
   height: auto;
   min-height: 25rem;
-  box-shadow: 1px 1px 10px 1px rgb(230, 230, 230);
+  box-shadow: 1px 1px 10px 1px $pure-grey;
   border-radius: 0.5rem;
   cursor: pointer;
 
@@ -13,18 +13,18 @@
 
   &:hover {
     transform: scale(1.01);
-    box-shadow: 1px 1px 10px 1px rgb(220, 220, 220);
+    box-shadow: 1px 1px 10px 1px $broken-grey;
   }
 
   &_image {
     background-size: cover;
     height: 60%;
     min-height: 15rem;
-    border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: $size-one-half $size-one-half 0 0;
   }
 
   &_text {
-    padding: 1rem;
+    padding: $size-one;
     min-height: 12rem;
 
     @include default-flex($align: flex-start, $justify: space-between);
@@ -34,14 +34,14 @@
     }
 
     p {
-      margin: 0.5rem 0;
+      margin: $size-one-half 0;
       font-size: 1.1rem;
     }
 
     &_lower {
       div {
-        border-top: 1px solid rgb(220, 220, 220);
-        color: rgb(100, 100, 100);
+        border-top: 1px solid $pure-grey;
+        color: $cloud-grey;
         padding-top: 0.2rem;
         
         @include default-flex($direction: row, $justify: space-between);
@@ -60,7 +60,7 @@
       h1 {
         text-transform: uppercase;
         color: $theme-cyan;
-        font-size: 1.5rem;
+        font-size: $size-one-plus-half;
         text-align: end;
       }
   

@@ -7,7 +7,7 @@
   @include default-flex;
 
   &_section_entries {
-    grid-gap: 1rem;
+    grid-gap: $size-one;
     width: 100%;
 
     @include default-grid($columns: 1fr 1fr 1fr);
@@ -21,7 +21,7 @@
 
   &_buttons {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: $size-one;
 
     @include default-flex($direction: row, $justify: space-between);
     @include breakpoint-medium {
@@ -40,19 +40,19 @@
       text-align: right;
 
       @include breakpoint-medium {
-        margin-bottom: 1rem;
+        margin-bottom: $size-one;
         text-align: left;
       }
     }
 
     button {
-      margin: 1rem 0.2rem 0 1rem;
+      margin: $size-one 0.2rem 0 $size-one;
     }
 
     h2 {
       display: inline-block;
       font-weight: 400;
-      min-width: 8rem;
+      min-width: $size-eight;
 
       @include breakpoint-medium {
         font-size: 1.2rem;

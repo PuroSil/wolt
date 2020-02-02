@@ -4,7 +4,7 @@
 input[type=text] {
   padding: 0.8rem $size-two 0.8rem $size-three-plus-half;
   border-radius: $size-three;
-  border: 1px solid rgb(200, 200, 200);
+  border: 1px solid $broken-grey;
   width: 20rem;
   margin-bottom: $size-one-half;
 }
@@ -12,19 +12,19 @@ input[type=text] {
 .search {
   &__form {
     position: absolute;
-    top: 2rem;
+    top: $size-two;
     right: 0;
 
     @include breakpoint-small {
       width: 100%;
       position: static;
-      margin-top: 1rem;
+      margin-top: $size-one;
     }
   }
 
   &__input[type=text] {
-    height: 2rem;
-    padding-left: 1.5rem;
+    height: $size-two;
+    padding-left: $size-one-plus-half;
     margin: 0;
     border-radius: 0.2rem;
     width: 12rem;
@@ -38,13 +38,12 @@ input[type=text] {
     font-size: 0.8rem;
     border-radius: 0.2rem;
     min-width: 0;  
-    margin-left: 0.5rem; 
+    margin-left: $size-one-plus-half; 
 
-     
     @include breakpoint-small {
       width: 100%;
       margin-left: 0;
-      margin-top: 0.5rem;
+      margin-top: $size-one-plus-half;
     }
   }
 }

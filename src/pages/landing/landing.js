@@ -5,9 +5,9 @@ import SearchContainer from '../../containers/searchContainer/searchContainer';
 import ImageElement from '../../components/image/image';
 import Form from '../../components/form/form';
 import Input from '../../components/input/input';
+import Footer from '../../components/footer/footer';
 import '../pages.css';
 import './landing.css';
-import Footer from '../../components/footer/footer';
 
 const Landing = () => {
   return (

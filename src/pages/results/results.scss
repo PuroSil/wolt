@@ -1,23 +1,24 @@
+@import '../../globals/variables';
+
 .page__results {
   position: relative;
-  padding: 5rem 0;
+  padding: $size-five 0;
   width: 70%;
   max-width: 1400px;
   margin: auto;
 
   img {
     position: absolute;
-    top: 2rem;
+    top: $size-two;
     left: 0;
-    height: 2rem;
+    height: $size-two;
     transform: rotate(7deg);
   }
 
   &_title {
     width: 100%;
     font-weight: 400;
-    font-size: 3rem;
-    margin: 2rem 0;
+    font-size: $size-three;
+    margin: $size-two 0;
   }
 }
-

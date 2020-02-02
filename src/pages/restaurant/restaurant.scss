@@ -7,11 +7,11 @@
 
   &_category_title {
     width: 100%;
-    margin: 2rem 0;
+    margin: $size-two 0;
     font-weight: 400;
     font-size: 2.2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgb(177, 177, 177);
+    padding-bottom: $size-one;
+    border-bottom: 1px solid $broken-grey;
   }
 
   &_hours {
@@ -32,8 +32,8 @@
 
     &_tags {
       position: absolute;
-      bottom: 2rem;
-      right: 2rem;
+      bottom: $size-two;
+      right: $size-two;
 
       @include default-flex($direction: row);
       @include breakpoint-small {
@@ -44,14 +44,14 @@
       h4 {
         font-weight: 500;
         font-size: 0.9rem;
-        margin-left: 1rem;
+        margin-left: $size-one;
         background-color: $theme-cyan;
-        padding: 0.3rem 1rem;
+        padding: 0.3rem $size-one;
         border-radius: 0.3rem;
 
         @include breakpoint-small {
           margin-left: 0;
-          margin-right: 1rem;
+          margin-right: $size-one;
         }
       }
     }
@@ -59,7 +59,7 @@
     .black__overlay {
       height: 80vh;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba($pure-black, 0.5);
       position: absolute;
       top: 0;
     }
@@ -77,29 +77,27 @@
       }
 
       h1 {
-        font-size: 5rem;
+        font-size: $size-five;
 
         @include breakpoint-small {
-          font-size: 2.5rem;
-          padding: 1rem 0;
+          font-size: $size-two-plus-half;
+          padding: $size-one 0;
         }
       }
 
       h2 {
         font-weight: 400;
-        margin: 2rem 0 1rem 0;
+        margin: $size-two 0 $size-one 0;
       }
 
       h3 {
-        font-weight: 400;
         position: absolute;
-        bottom: 2rem;
+        bottom: $size-two;
         left: 0;
-        font-size: 1.3rem;
 
         @include breakpoint-small {
-          font-size: 1rem;
-          bottom: 6rem;
+          font-size: $size-one;
+          bottom: $size-six;
         }
       }
     }
@@ -116,20 +114,22 @@
       flex-direction: column-reverse;
     }
 
+    h3 {
+      font-weight: 400;
+    }
+
     &_left {
       width: 70%;
-      min-height: 55rem;
-      padding: 5rem 0;
+      padding: $size-five 0;
 
       @include default-flex($justify: flex-start);
       @include breakpoint-small {
         width: 100%;
-        padding: 1rem 0;
+        padding: $size-one 0;
       }
 
       h3 {
-        font-weight: 400;
-        margin: 2rem 0;
+        margin: $size-two 0;
       }
     }
 
@@ -138,49 +138,46 @@
       position: sticky;
       top: 0;
       align-self: flex-start;
-      padding: 6.5rem 0 0 5rem;
+      padding: $size-six-plus-half 0 0 $size-five;
       white-space: nowrap;
 
       @include default-flex($align: flex-start);
       @include breakpoint-small {
         width: 100%;
         position: static;
-        padding: 3rem 0 0 0;
+        padding: $size-three 0 0 0;
       }
 
       h2 {
         font-size: 1.3rem;
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        margin-bottom: $size-one-half;
       }
 
       h3 {
-        font-weight: 400;
-        font-size: 1.2rem;
-
         @include breakpoint-small {
-          font-size: 1rem;
+          font-size: $size-one;
           color: $pure-white;
           font-weight: 600;
         }
       }
 
       img {
-        height: 2rem;
-        margin-right: 1rem;
+        height: $size-two;
+        margin-right: $size-one;
 
         @include breakpoint-small {
           height: 1.3rem;
-          margin-right: 0.5rem;
+          margin-right: $size-one-half;
         }
       }
 
       button {
-        margin-top: 1rem;
+        margin-top: $size-one;
       }
 
       .page__restaurant_hours {
-        margin-bottom: 2rem;
+        margin-bottom: $size-two;
       }
 
       &_shop {
@@ -192,15 +189,15 @@
           position: fixed;
           top: 0;
           right: 0;
-          padding: 1rem;
+          padding: $size-one;
           background-color: $theme-cyan;
-          border-radius: 0 0 0 0.5rem;
+          border-radius: 0 0 0 $size-one-half;
           opacity: 0.9;
         }
       }
 
       &_categories {
-        margin-top: 2rem;
+        margin-top: $size-two;
 
         @include breakpoint-small {
           margin-top: 0;
@@ -225,9 +222,9 @@
 
   .logo {
     position: absolute;
-    top: 2rem;
+    top: $size-two;
     left: 0;
-    height: 3rem;
+    height: $size-three;
     transform: rotate(7deg);
   }
 
@@ -236,7 +233,7 @@
   }
 
   li {
-    margin: 1rem 0;
+    margin: $size-one 0;
     color: $broken-black;
     padding-bottom: 0.2rem;
     cursor: pointer;
