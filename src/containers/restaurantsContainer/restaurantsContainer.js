@@ -34,6 +34,10 @@ const RestaurantContainer = () => {
   // This is a placeholder function that calculates crow's distance between
   // two points to get nearby restaurants, not ideal, but will do for now
   const distance = (lat1, lon1, lat2, lon2) => {
+    console.log(getDistance(
+      { latitude: lat1, longitude: lon1 },
+      { latitude: lat2, longitude: lon2 }
+    ))
     return getDistance(
       { latitude: lat1, longitude: lon1 },
       { latitude: lat2, longitude: lon2 }

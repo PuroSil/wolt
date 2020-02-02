@@ -33,7 +33,7 @@ const getRestaurantsByName = async (req, res, next) => {
       return res.json(
         restaurants.filter(
           restaurant => distance(req.query.userLat, req.query.userLon, restaurant.location[1], restaurant.location[0]) 
-          < 3000
+          < 5000
         )
       );
     } else {

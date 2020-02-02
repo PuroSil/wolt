@@ -1,4 +1,7 @@
-describe('Base functionality tests', () => {
+const searchValueCity = 'Helsinki';
+const searchValueFood = 'Sushi';
+
+describe('Base end-to-end functionality tests', () => {
   it('Test API request validity', () => {
     cy.request('http://localhost:8000/api/getAllRestaurants')
     .then((response) => {
@@ -14,15 +17,21 @@ describe('Base functionality tests', () => {
   });
 
   it('Input and submit at landing', () => {
-    const searchValueCity = 'Helsinki';
     cy.get('input')
       .type(searchValueCity)
       .should('have.value', searchValueCity)
       .type('{enter}')
   });
 
+  it('Use query search and validate it', () => {
+    cy.request(`http://localhost:8000/api/getRestaurantsByName?name=${searchValueFood}&userLon=24.909268599999997&userLat=60.1563668`)
+    .then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body).to.have.length.lessThan(50)
+    });
+  });
+
   it('Input and submit at results', () => {
-    const searchValueFood = 'Sushi';
     cy.get('.search__input')
       .type(searchValueFood)
       .should('have.value', searchValueFood)

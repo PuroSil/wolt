@@ -17,9 +17,9 @@ const Search = () => {
     e.preventDefault();
 
     const name = searchValue;
-    const userLon = userLocation[0]
-    const userLat = userLocation[1]
-
+    const userLon = userLocation[0];
+    const userLat = userLocation[1];
+    
     const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName`, {
       params: {
         name,
