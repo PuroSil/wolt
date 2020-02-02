@@ -1,6 +1,0 @@
-1. Clean the SASS files (too much redundancy)
-2. Remove the map files from github
-3. Do a code review, cleanup and comments
-
-PRE-FINAL. Create a readme
-FINAL. Host site somewhere
