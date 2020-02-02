@@ -42,6 +42,7 @@
 }
 
 .block__sale_left {
+  background-image: url("../../resources/images/donutsBlueS.jpg");
   background-size: cover;
   background-position: center;
   width: 60%;

@@ -21,7 +21,7 @@ const RestaurantContainer = () => {
   const { userLocation } = useContext(LocationContext);
   const { setSelectedRes } = useContext(SelectedResContext);
   const { restaurantsList, setRestaurantsList } = useContext(RestaurantContext);
-  const [saleItem, setSaleItem] = useState(null);
+  const [saleItem, setSaleItem] = useState(null)
 
   useEffect(() => {
     setSaleItem(restaurantsList[Math.floor(Math.random() * restaurantsList.length)]);
@@ -56,7 +56,15 @@ const RestaurantContainer = () => {
             event={() => setSelectedRestaurant(saleItem.name, saleItem.image, saleItem.tags)}
           /> 
         </NavLink>
-      : null
+      : 
+        <NavLink exact to="/restaurant" activeClassName="active"> 
+          <SaleBlock 
+            name={'We are sorry!'} 
+            city={'Your search yielded no results'} 
+            description={'There was nothing withing 3 kilometers radius'}
+            imgUrl={require("../../resources/images/bread.jpg")}
+          /> 
+        </NavLink>
       }
       <section className="container__restaurants_buttons">
         <div className="container__restaurants_buttons_left">
