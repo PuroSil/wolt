@@ -1,54 +1,23 @@
-#DESIGN LINK: https://www.figma.com/proto/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=69%3A2&scaling=contain
+# DESIGN LINK: https://www.figma.com/proto/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=69%3A2&scaling=contain
+# LIVE WEBSITE LINK: ---
 
-Front:
+This project was based on the pre-assignment by Wolt, where you got to choose between doing the front or the back.
 
-Build a web page that shows all fifty restaurants. You can freely decide which fields to utilize from restaurants objects, so no need to put all the data visible. However, please use at least three fields.
+In the front, you had to use a json that had 50 restaurants and render those for the user and then, allow the user
+to order the restaurants by name.
 
-There are no restrictions on design, so restaurants can be displayed vertically, horizontally, on a grid or however you decide. Aim for clear and responsive design.
+In the back, you were tasked to create an API call that took three query parameters. Search string, user longtitude and user latitude.
+With these parameters, return from the prementioned restaurants that match the query and are within 3 kilometers radius of you. 
+The minumum length of a query parameter for this query should be one.
 
-In addition of rendering restaurants, create a possibility to sort restaurants alphabetically in ascending and descending order, e.g. by adding a sort-button on the top of the list.
+So, with those in mind, I decided to do this all and then some. I created a design in my favourite tool right now, Figma, and used that
+to build a basic front-end for the application with React. After that, I designed the API's of which I created three. One to add a restaurant to the database, one to get all of the restaurants and one to work with the prementioned query parameters. Instead of using a local file, I created
+a mongoDB database using MongoDB Atlas that works well for these quick projects.
 
-Below is an example how the user interface could look like:
+After I built the API's with the classic Node.js REST stack and tested them with insomnia, I integrated them to the already built front and wrote some basic Cypress tests to ensure it all works.
 
-
-Back:
-
-Create a REST API endpoint that allows searching restaurants. API needs to accept three parameters:
-
-    q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
-    lat: latitude coordinate (customer's location)
-    lon : longitude coordinate (customer's location)
-
-API should return restaurant (objects) which match the given query string and are closer than 3 kilometers from coordinates.
-
-Example query:
-
-/restaurants/search?q=sushi&lat=60.17045&lon=24.93147
-
-This search would return restaurants (in JSON format) which contain a word sushi and are closer than 3km to the point [60.17045, 24.93147].
-
-Please do not use any on-disk database (MySQL, PostgreSQL, ...) or ElasticSearch in this assignment. The task can be completed without them.
+This was all done in the span of a week as I lacked time to work on this longer, so keeping that in mind, I'm pleased with how it functions now.
+I could always expand this and add more and more functionalities and make this a full fledged and working application, but then I would be
+working on this project for months to come. I would have loved to create a CI/CD pipeline as that is what I need to learn more about as well as make this a full fledged cloud application, but, perhaps someday I'll do something like this again.
 
 
-Bonus task: Blurhash
-
-Restaurant data also includes a field called blurhash. As a bonus task you can figure out what this field is and use it:
-
-    In frontend task you can render the blurhash data
-    In backend task you can e.g. validate that blurhash-field is correct when loading data from restaurant.json
-
-There are some ready-made libraries for manipulating blurhash values. Feel free use those or create your own one.
-
-Bonus task is completely optional and it doesn't affect how we review assignments. It exists only for fun! grinning
-Instructions
-
-    Write the assignment using either TypeScript / JavaScript, Python, Scala, Kotlin or Java
-    Feel free to use any 3rd party framework / library, however try to minimize external dependencies. React is popular in Wolt, so would be great if you can use that in frontend version of this task.
-
-
-Few tips
-
-    Everyone in Wolt loves clean code
-    Everyone in Wolt also loves good tests
-    Try to figure out what is the essential part in this task. Focus on that first.
-    Don't forget README.md with clear instructions how to get the project up and running

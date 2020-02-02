@@ -45,9 +45,10 @@
 }
 
 .container__search h3 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 3rem;
   text-align: left;
+  letter-spacing: -0.1rem;
 }
 
 @media (max-width: 800px) {
