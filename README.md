@@ -1,4 +1,4 @@
-#DESIGN LINK: https://www.figma.com/file/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=0%3A1
+#DESIGN LINK: https://www.figma.com/proto/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=69%3A2&scaling=contain
 
 Front:
 
