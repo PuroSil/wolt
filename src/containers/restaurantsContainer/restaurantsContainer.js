@@ -86,6 +86,7 @@ const RestaurantContainer = () => {
         restaurantsList.map((entry) =>
         // From my location at the time of writing this, which was Jätkäsaari in Helsinki, all restaurants in the database
         // were between 2 to 3 kilometers, but after faking some GPS, I managed to test and see that this works
+        // In order to test this with other distances, you need to go and change the distance compared to at appropriate API route
           {if(userLocation.length > 0)  {
             return (
               <NavLink exact to="/restaurant" key={entry.name}>

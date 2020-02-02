@@ -17,8 +17,6 @@ const distance = (lat1, lon1, lat2, lon2) => {
   );
 };
 
-// create restaurant search that checks if paramaters included in name (includes() lodash or vanilla)
-// try to make it work with dao
 const getRestaurantsByName = async (req, res, next) => {
   try {
     if (req.query.name.length > 0 && req.query.userLat !== undefined || req.query.userLon !== undefined) {
@@ -29,7 +27,7 @@ const getRestaurantsByName = async (req, res, next) => {
           {description:{'$regex' : req.query.name, '$options' : 'i'}}]
       });
 
-      // Due to there only being 50 restaurants in the database, it is hard to come up with a distance
+      // Due to there only 50 restaurants in the database, it is hard to come up with a distance
       // that would yield results to most searches, but that would be solved by having a proper amount
       // of restaurants. Setting it to 3 km (3000 meters) for now.
       return res.json(
