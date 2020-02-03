@@ -18,7 +18,7 @@ const RestaurantContextProvider = props => {
     
     (async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/getAllRestaurants', { cancelToken: source.token });
+        const response = await axios.get('http://localhost:8080/api/getAllRestaurants', { cancelToken: source.token });
           setRestaurantsList(lodash.sortBy(response.data, ['name']));
       } catch (error) {
         if (axios.isCancel(error)) {

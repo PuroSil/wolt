@@ -3,7 +3,7 @@ const searchValueFood = 'Sushi';
 
 describe('Base end-to-end functionality tests', () => {
   it('Test API request validity', () => {
-    cy.request('http://localhost:8000/api/getAllRestaurants')
+    cy.request('http://localhost:8080/api/getAllRestaurants')
     .then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.have.length.greaterThan(0)
@@ -24,7 +24,7 @@ describe('Base end-to-end functionality tests', () => {
   });
 
   it('Use query search and validate it', () => {
-    cy.request(`http://localhost:8000/api/getRestaurantsByName?name=${searchValueFood}&userLon=24.909268599999997&userLat=60.1563668`)
+    cy.request(`http://localhost:8080/api/getRestaurantsByName?name=${searchValueFood}&userLon=24.909268599999997&userLat=60.1563668`)
     .then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.have.length.lessThan(50)

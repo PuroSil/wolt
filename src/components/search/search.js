@@ -20,7 +20,7 @@ const Search = () => {
     const userLon = userLocation[0];
     const userLat = userLocation[1];
     
-    const response = await axios.get(`http://localhost:8000/api/getRestaurantsByName`, {
+    const response = await axios.get(`http://localhost:8080/api/getRestaurantsByName`, {
       params: {
         name,
         userLon,
