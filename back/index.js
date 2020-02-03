@@ -6,9 +6,8 @@ const routes = require('./routes/restaurantRoutes');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 8080;
-const dbUri = process.env.DB_URL;
-
 dotenv.config();
+const dbUri = process.env.DB_URL;
 
 app.use(
   cors({

@@ -32,11 +32,14 @@ working on this project for months to come. I would have loved to create a CI/CD
 ### Usage
 The application has 3 API endpoints, 2 of which are in use in the application at its current state.
 
-- /getAllRestaurants (will return all restaurants from the database)
+- /getAllRestaurants 
+  Will return all restaurants from the database
 
-- /getRestaurantsByName (takes search string as a query paramameter and the users location and returns all restaurants that fit the query)
+- /getRestaurantsByName 
+  Takes search string as a query paramameter and the users location (if given) and returns all restaurants that fit the query
 
-- /addRestarant (not in use but it can be used to add restaurants in the database through Insomnia, Postman etc.)
+- /addRestarant N
+  Not in use but it can be used to add restaurants in the database through Insomnia, Postman etc.
 
 The city search in the landing page has no functionality at the moment, as the database only has 50 restaurants that are all from Helsinki.
 Search that is in the results page, does work, and uses the /getRestaurantsByName API endpoint.
