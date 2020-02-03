@@ -30,9 +30,24 @@ working on this project for months to come. I would have loved to create a CI/CD
 4. The application has been made to run on localhost in port 3000
 
 ### Usage
+The application has 3 API endpoints, 2 of which are in use in the application at its current state.
 
-Feel free to clone the code if you get something out of it and look at the designs etc. You can see the website running by following the live website link. The code here is exactly what is running there, apart from the .env file that is missing here, of course.
+- /getAllRestaurants (will return all restaurants from the database)
+
+- /getRestaurantsByName (takes search string as a query paramameter and the users location and returns all restaurants that fit the query)
+
+- /addRestarant (not in use but it can be used to add restaurants in the database through Insomnia, Postman etc.)
+
+The city search in the landing page has no functionality at the moment, as the database only has 50 restaurants that are all from Helsinki.
+Search that is in the results page, does work, and uses the /getRestaurantsByName API endpoint.
 
 ### Todo
+- Expand the city search to work
+- Create more sorting options for the restaurants
+- Transfer the application to use Typescript
+- Expand testing
+- Create a docker compose file
+- Consider using Redux if the application expands
 
 ### Extra
+Feel free to clone the repository, should you find it useful. If you have any questions, drop me a message!
