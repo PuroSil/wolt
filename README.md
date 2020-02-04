@@ -33,12 +33,13 @@ working on this project for months to come. I would have loved to create a CI/CD
 The application has 3 API endpoints, 2 of which are in use in the application at its current state.
 
 - /getAllRestaurants 
-  Will return all restaurants from the database
+  Will return all restaurants from the database.
 
 - /getRestaurantsByName 
-  Takes search string as a query paramameter and the users location (if given) and returns all restaurants that fit the query
+  Takes search string as a query paramameter and the users location (if given) and returns all restaurants that fit the query.
+  It has been configured to return restaurants within 3000 meters, to change this, you need to change the value in the routes file that handles the query checks.
 
-- /addRestarant N
+- /addRestarant
   Not in use but it can be used to add restaurants in the database through Insomnia, Postman etc.
 
 The city search in the landing page has no functionality at the moment, as the database only has 50 restaurants that are all from Helsinki.
