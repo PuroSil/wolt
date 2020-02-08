@@ -6,6 +6,7 @@ const {
   daoGetRestaurantsByName
 } = require('../daos/restaurantDao');
 const { getDistance } = require('geolib');
+const lodash = require ('lodash');
 
 // I had problems with Google Maps API, so this function
 // is a placeholder and calculates crow's distance between
@@ -31,10 +32,10 @@ const getRestaurantsByName = async (req, res, next) => {
       // that would yield results to most searches, but that would be solved by having a proper amount
       // of restaurants. Setting it to 3 km (3000 meters) for now.
       return res.json(
-        restaurants.filter(
+        lodash.sortBy(restaurants.filter(
           restaurant => distance(req.query.userLat, req.query.userLon, restaurant.location[1], restaurant.location[0]) 
           < 3000
-        )
+        ), ['name'])
       );
     } else {
       
@@ -44,7 +45,7 @@ const getRestaurantsByName = async (req, res, next) => {
           {tags:{'$regex' : req.query.name, '$options' : 'i'}},
           {description:{'$regex' : req.query.name, '$options' : 'i'}}]
       });
-      return res.json(restaurants);
+      return res.json(lodash.sortBy(restaurants), ['name']);
     }
   } catch (err) {
     console.log("error", err)
