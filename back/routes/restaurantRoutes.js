@@ -38,7 +38,6 @@ const getRestaurantsByName = async (req, res, next) => {
         ), ['name'])
       );
     } else {
-      
       const restaurants = await Restaurant.find({
         $or:
           [{name:{'$regex' : req.query.name, '$options' : 'i'}},
