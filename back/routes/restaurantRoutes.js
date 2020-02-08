@@ -27,7 +27,7 @@ const getRestaurantsByName = async (req, res, next) => {
           {description:{'$regex' : req.query.name, '$options' : 'i'}}]
       });
 
-      // Due to there only 50 restaurants in the database, it is hard to come up with a distance
+      // Due to there being only 50 restaurants in the database, it is hard to come up with a distance
       // that would yield results to most searches, but that would be solved by having a proper amount
       // of restaurants. Setting it to 3 km (3000 meters) for now.
       return res.json(
@@ -37,7 +37,13 @@ const getRestaurantsByName = async (req, res, next) => {
         )
       );
     } else {
-      const restaurants = await Restaurant.find({});
+      
+      const restaurants = await Restaurant.find({
+        $or:
+          [{name:{'$regex' : req.query.name, '$options' : 'i'}},
+          {tags:{'$regex' : req.query.name, '$options' : 'i'}},
+          {description:{'$regex' : req.query.name, '$options' : 'i'}}]
+      });
       return res.json(restaurants);
     }
   } catch (err) {

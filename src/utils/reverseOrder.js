@@ -3,4 +3,4 @@ const reverseOrder = (setterFirst, setterSecond, valueFirst, valueSecond) => {
   setterSecond([...valueSecond.reverse()]);
 };
 
-module.exports = { reverseOrder };
+export { reverseOrder };

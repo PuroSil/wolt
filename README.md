@@ -1,6 +1,9 @@
-## DESIGN LINK: https://www.figma.com/proto/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=69%3A2&scaling=contain
-## LIVE WEBSITE LINK: ---
+# FOOD COURIER APPLICATION
 
+## DESIGN LINK: https://www.figma.com/proto/HkBk2C2679WTzlfDuCNaQ5/Wolt-design?node-id=69%3A2&scaling=contain
+## LIVE WEBSITE LINK: https://food-courier.herokuapp.com/
+
+### General Information
 This project was based on the pre-assignment by Wolt, where you got to choose between doing the front or the back.
 
 In the front, you had to use a json that had 50 restaurants and render those for the user and then, allow the user
@@ -20,4 +23,35 @@ This was all done in the span of a week as I lacked time to work on this longer,
 I could always expand this and add more and more functionalities and make this a full fledged and working application, but then I would be
 working on this project for months to come. I would have loved to create a CI/CD pipeline as that is what I need to learn more about as well as make this a full fledged cloud application or used this project to dive deeper into Typescript, but time was limited.
 
-Feel free to clone the code if you get something out of it and look at the designs etc. You can see the website running by following the live website link. The code here is exactly what is running there, apart from the .env file that is missing here, of course.
+### Installation
+1. Clone the repository and use the npm install command to install the required dependencies for both client and server
+2. Create a .env file that will hold the database information in a variable called DB_URL
+3. Both front and back have npm start script to run the application
+4. The application has been made to run on localhost in port 3000
+
+### Usage
+The application has 3 API endpoints, 2 of which are in use in the application at its current state.
+
+- /getAllRestaurants 
+  Will return all restaurants from the database.
+
+- /getRestaurantsByName 
+  Takes search string as a query paramameter and the users location (if given) and returns all restaurants that fit the query.
+  It has been configured to return restaurants within 3000 meters, to change this, you need to change the value in the routes file that handles the query checks.
+
+- /addRestarant
+  Not in use but it can be used to add restaurants in the database through Insomnia, Postman etc.
+
+The city search in the landing page has no functionality at the moment, as the database only has 50 restaurants that are all from Helsinki.
+Search that is in the results page, does work, and uses the /getRestaurantsByName API endpoint.
+
+### Todo
+- Expand the city search to work
+- Create more sorting options for the restaurants
+- Transfer the application to use Typescript
+- Expand testing
+- Create a docker compose file
+- Consider using Redux if the application expands
+
+### Extra
+Feel free to clone the repository, should you find it useful. If you have any questions, drop me a message!
