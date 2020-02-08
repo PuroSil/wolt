@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import SelectedResContextProvider from './context/selectedResContext';
 import RestaurantContextProvider from './context/restaurantContext';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <HashRouter basename="/">
+  <Router>
       <SelectedResContextProvider>
         <RestaurantContextProvider>
           <App />
         </RestaurantContextProvider>
       </SelectedResContextProvider>
-  </HashRouter>,
+    </Router>,
   document.getElementById('root')
 );

@@ -13,9 +13,9 @@ const { geoLocation } = require('./utils/geoLocation');
 const App = () => {
   const [userLocation, setUserLocation] = useState([]);
   const locationProvider = useMemo(() => ({ userLocation, setUserLocation }), [userLocation, setUserLocation]);
-  const location = useLocation();
 
   // React Spring animation settings
+  const location = useLocation();
   const pageTransitions = useTransition(location, location => location.pathname, {
     from: { opacity: 0},
     enter: { opacity: 1},
